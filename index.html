@@ -1,74 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Bebidas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <h1>Catálogo de Bebidas</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#italia-drinks">Italia Drinks</a></li>
+                <li><a href="#cadastro">Cadastro</a></li>
+                <li><a href="#marketplace">Marketplace</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <div class="logo">Catálogo de Bebidas</div>
-    <nav>
-        <a href="#clássicos">Clássicos</a>
-        <a href="#tropicais">Tropicais</a>
-        <a href="#modernos">Modernos</a>
-        <a href="#italia">Bebidas da Itália</a>
-        <a href="#shop">Loja</a>
-    </nav>
-</header>
+    <!-- IA Section -->
+    <section id="ia">
+        <h2>Criador de Receitas</h2>
+        <form id="ia-form">
+            <label for="ia-occasion">Ocasionalidade:</label>
+            <select id="ia-occasion" required>
+                <option value="jantar">Jantar</option>
+                <option value="festa">Festa</option>
+                <option value="casual">Casual</option>
+            </select>
 
-<!-- Formulário de Cadastro no topo -->
-<div id="signup-section">
-    <button class="shop-btn" onclick="openSignupForm()">Cadastrar-se para Comprar</button>
-    <div id="signup-form-container"></div>
-</div>
+            <label for="ia-includes">Quero que tenha:</label>
+            <input type="text" id="ia-includes" placeholder="Ex: limão, vodka">
 
-<!-- Pesquisa -->
-<div id="search-section">
-    <input type="text" id="search" placeholder="Pesquisar bebidas...">
-    <button id="search-btn" onclick="searchRecipes()">Pesquisar</button>
-</div>
+            <label for="ia-excludes">Não quero que tenha:</label>
+            <input type="text" id="ia-excludes" placeholder="Ex: açúcar, rum">
 
-<!-- Exibição de Categorias -->
-<div id="categories">
-    <div id="clássicos" class="category">
-        <h2>Cóctéis Clássicos</h2>
-        <ul id="clássicos-list"></ul>
-    </div>
+            <button type="submit">Criar Receita</button>
+        </form>
+        <div id="ia-result"></div>
+    </section>
 
-    <div id="tropicais" class="category">
-        <h2>Cóctéis Tropicais</h2>
-        <ul id="tropicais-list"></ul>
-    </div>
+    <!-- Categorias -->
+    <section id="categories">
+        <h2>Categorias</h2>
+        <div class="category" onclick="loadCategory('Classicos')">Clássicos</div>
+        <div class="category" onclick="loadCategory('Tropicais')">Tropicais</div>
+        <div class="category" onclick="loadCategory('Modernos')">Modernos</div>
+        <div class="category" onclick="loadCategory('Italia Drinks')">Italia Drinks</div>
+    </section>
 
-    <div id="modernos" class="category">
-        <h2>Cóctéis Modernos</h2>
-        <ul id="modernos-list"></ul>
-    </div>
+    <!-- Marketplace -->
+    <section id="marketplace">
+        <h2>Marketplace</h2>
+        <div class="market-item">
+            <h3>Vinho Chianti</h3>
+            <p>Preço: R$120,00</p>
+            <button>Adicionar ao carrinho</button>
+        </div>
+        <div class="market-item">
+            <h3>Limoncello</h3>
+            <p>Preço: R$90,00</p>
+            <button>Adicionar ao carrinho</button>
+        </div>
+        <!-- Mais itens... -->
+    </section>
 
-    <div id="italia" class="category">
-        <h2>Bebidas da Itália</h2>
-        <ul id="italia-list"></ul>
-    </div>
-</div>
+    <!-- Cadastro -->
+    <section id="cadastro">
+        <h2>Cadastro</h2>
+        <form id="register-form">
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" placeholder="Seu nome" required>
 
-<!-- IA -->
-<div id="ai-container">
-    <div id="ai-window">
-        <div id="ai-messages"></div>
-        <input type="text" id="ai-input" placeholder="Digite o que você deseja (ingredientes, ocasião, etc.)..." onkeyup="checkInput(event)">
-        <button onclick="createRecipe()">Criar Receita</button>
-    </div>
-</div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="seuemail@dominio.com" required>
 
-<!-- Rodapé -->
-<footer>
-    <p>&copy; 2024 Catálogo de Bebidas. Todos os direitos reservados.</p>
-</footer>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" placeholder="000.000.000-00" required>
 
-<script src="scripts.js"></script>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" placeholder="00000-000" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Catálogo de Bebidas. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
