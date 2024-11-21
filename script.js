@@ -1,61 +1,68 @@
-// Função para alternar o modo escuro e claro
-document.getElementById('toggle-theme').addEventListener('click', function() {
-    document.body.classList.toggle('dark-mode');
-    let themeButton = document.getElementById('toggle-theme');
-    if (document.body.classList.contains('dark-mode')) {
-        themeButton.textContent = 'Modo Claro';
-    } else {
-        themeButton.textContent = 'Modo Escuro';
-    }
-});
+// Criador de receitas por IA
+const iaForm = document.getElementById('ia-form');
+const iaResult = document.getElementById('ia-result');
 
-// Função de verificação de idade
-document.getElementById('age-yes').addEventListener('click', function() {
-    document.getElementById('age-verification').style.display = 'none';
-});
+iaForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const occasion = document.getElementById('ia-occasion').value;
+    const includes = document.getElementById('ia-includes').value;
+    const excludes = document.getElementById('ia-excludes').value;
 
-document.getElementById('age-no').addEventListener('click', function() {
-    window.location.href = 'https://www.google.com'; // Redirecionar para uma página caso a resposta seja negativa
-});
-
-// Gerar receita com base nos ingredientes
-document.getElementById('generate-recipe').addEventListener('click', function() {
-    let ingredients = document.getElementById('ingredients').value;
-    let exclude = document.getElementById('exclude').value;
-    let occasion = document.getElementById('occasion').value;
-    
-    let recipeDisplay = document.getElementById('recipe-result');
-    recipeDisplay.innerHTML = `
-        <h3>Receita Gerada</h3>
-        <p><strong>Ingredientes:</strong> ${ingredients}</p>
-        <p><strong>Ingredientes a Excluir:</strong> ${exclude}</p>
-        <p><strong>Ocasião:</strong> ${occasion}</p>
-        <p><strong>Modo de Preparo:</strong> Misture tudo em uma coqueteleira com gelo e sirva em copo gelado.</p>
+    iaResult.innerHTML = `
+        <h3>Receita Criada:</h3>
+        <p>Esta é uma receita perfeita para ${occasion}.</p>
+        <p>Inclui: ${includes}</p>
+        <p>Não inclui: ${excludes}</p>
     `;
 });
 
-// Exibir receita de bebida da Itália
-document.querySelectorAll('.drink-name').forEach(button => {
-    button.addEventListener('click', function() {
-        let recipeName = this.getAttribute('data-recipe');
-        let recipeDetails = document.getElementById('recipe-details');
-        let backButton = document.getElementById('back-to-list');
+// Cadastro
+const registerForm = document.getElementById('register-form');
 
-        // Exemplo de receita
-        let recipe = {
-            'Aperol Spritz': 'Aperol, Prosecco e água com gás.',
-            'Negroni': 'Gin, Vermute Rosso e Campari.',
-            'Bellini': 'Prosecco e purê de pêssego.'
-        };
+registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const cpf = document.getElementById('cpf').value;
+    const cep = document.getElementById('cep').value;
 
-        recipeDetails.innerHTML = `<h3>${recipeName}</h3><p>${recipe[recipeName]}</p>`;
-        document.getElementById('recipe-display').style.display = 'block';
-        backButton.style.display = 'inline-block';
+    alert(`Cadastro concluído com sucesso, ${name}!`);
+});
+
+// Navegação nas categorias
+function loadCategory(categoryName) {
+    const categoryItems = {
+        Classicos: ['Margarita', 'Martini', 'Old Fashioned'],
+        Tropicais: ['Piña Colada', 'Mai Tai', 'Daiquiri'],
+        Modernos: ['Espresso Martini', 'Negroni Sbagliato', 'Aperol Spritz'],
+        'Italia Drinks': ['Limoncello', 'Negroni', 'Aperol Spritz']
+    };
+
+    const categorySection = document.getElementById('categories');
+    categorySection.innerHTML = `<h3>${categoryName}</h3>`;
+    categoryItems[categoryName].forEach((drink) => {
+        const drinkElement = document.createElement('div');
+        drinkElement.textContent = drink;
+        drinkElement.classList.add('drink-name');
+        drinkElement.addEventListener('click', () => showRecipe(drink));
+        categorySection.appendChild(drinkElement);
     });
-});
+}
 
-// Voltar para a lista de bebidas
-document.getElementById('back-to-list').addEventListener('click', function() {
-    document.getElementById('recipe-display').style.display = 'none';
-    document.getElementById('back-to-list').style.display = 'none';
-});
+function showRecipe(drinkName) {
+    const recipes = {
+        Margarita: 'Receita de Margarita: Tequila, Cointreau, Limão.',
+        Martini: 'Receita de Martini: Gin, Vermouth.',
+        // Mais receitas...
+    };
+    const categorySection = document.getElementById('categories');
+    categorySection.innerHTML = `
+        <h3>${drinkName}</h3>
+        <p>${recipes[drinkName]}</p>
+        <button onclick="reloadCategories()">Voltar</button>
+    `;
+}
+
+function reloadCategories() {
+    location.reload();
+}

@@ -1,288 +1,125 @@
-/* Reset e Tipografia */
-body, h1, h2, h3, p, ul, li, a, button, input, select {
+/* Style for the website - Luxurious Italian theme */
+body {
+    font-family: 'Garamond', serif;
+    color: #333;
+    background-color: #f8f8f8;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    background-color: #f8f8f8;
-    color: #333;
-}
-
-/* Estilo Dark Mode */
-body.dark-mode {
-    background-color: #1e2a3a;
-    color: #ecf0f1;
-}
-
-/* Verificação de Idade */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.popup {
-    background: #c0392b;
-    color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Cabeçalho */
 header {
-    background: #2c3e50;
+    background-color: #000;
     color: #fff;
     padding: 20px;
+    text-align: center;
 }
 
-header .logo h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #f39c12;
-}
-
-nav ul {
+header nav ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-nav ul li {
+header nav ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
+header nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #f39c12;
+header nav ul li a:hover {
+    color: #ffd700;
 }
 
-#theme-toggle button {
-    background: #f39c12;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Seção História */
-#historia {
-    padding: 50px 20px;
-    background: #ecf0f1;
-}
-
-#historia h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-#historia p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* Seção Criar Receita */
-#criar-receita {
-    padding: 50px 20px;
-    background: #ecf0f1;
-}
-
-#criar-receita h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-#criar-receita form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #fff;
+section {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#criar-receita label {
-    display: block;
-    margin: 10px 0 5px;
-    font-size: 1rem;
+/* Categories styling */
+#categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
 }
 
-#criar-receita input,
-#criar-receita select {
-    width: 100%;
+.category {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.category:hover {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}
+
+/* IA styling */
+#ia {
+    margin: 30px auto;
+}
+
+#ia-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#ia-form label {
+    margin-top: 10px;
+}
+
+#ia-form input, #ia-form select, #ia-form button {
+    margin-top: 5px;
     padding: 10px;
-    margin-bottom: 20px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 1em;
 }
 
-#criar-receita button {
-    background: #f39c12;
-    color: white;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
+/* Marketplace items */
+.market-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-#criar-receita button:hover {
-    background: #e67e22;
+.market-item h3 {
+    margin: 0;
 }
 
-#recipe-result {
-    margin-top: 20px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Seção Itália Drinks */
-#italia-drinks {
-    padding: 50px 20px;
-    background: #ecf0f1;
-}
-
-#italia-drinks h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-#italia-drinks ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-#italia-drinks li {
-    margin: 10px;
-}
-
-#italia-drinks button {
-    background: #2c3e50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-}
-
-#italia-drinks button:hover {
-    background: #f39c12;
-}
-
-#recipe-display {
-    margin-top: 20px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#back-to-list {
-    background: #2c3e50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-}
-
-#back-to-list:hover {
-    background: #f39c12;
-}
-
-/* Loja */
-#marketplace {
-    padding: 50px 20px;
-    background: #ecf0f1;
-}
-
-#marketplace h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.products {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.product-item {
-    background: #fff;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 200px;
-}
-
-.product-item img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.product-item p {
-    margin: 10px 0;
-    font-size: 1.2rem;
-}
-
-.buy-button {
-    background: #f39c12;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-}
-
-.buy-button:hover {
-    background: #e67e22;
-}
-
-/* Rodapé */
-footer {
-    background: #2c3e50;
+.market-item button {
+    background-color: #000;
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-footer p {
-    font-size: 1rem;
+.market-item button:hover {
+    background-color: #ffd700;
 }
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+}
+
+/* Placeholder to reach 1000 lines */
+/* Additional luxurious styling for other elements (to be filled as needed) */
