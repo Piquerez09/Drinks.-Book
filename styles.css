@@ -5,6 +5,12 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
 }
 
 header {
@@ -36,6 +42,35 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
+}
+
+#theme-toggle {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#theme-btn {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #f5f5f5;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #theme-btn {
+    background-color: #333;
+    color: #fff;
+}
+
+#theme-btn:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+body.dark-mode #theme-btn:hover {
+    background-color: #0056b3;
 }
 
 #signup-section {
@@ -161,45 +196,39 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
-    z-index: 1000; /* Coloca o modal acima de outros elementos */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
 .age-verification-content {
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 40px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    width: 300px;
-}
-
-.age-verification-content h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.age-verification-buttons {
-    display: flex;
-    justify-content: space-around;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .age-verification-buttons button {
-    padding: 10px 20px;
+    padding: 15px;
     font-size: 1.1em;
-    border: none;
-    border-radius: 5px;
+    margin: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    border: none;
 }
 
-.age-verification-buttons button:hover {
-    background-color: #007BFF;
+#age-yes {
+    background-color: #4CAF50;
     color: white;
 }
 
 #age-no {
     background-color: #f44336;
+    color: white;
+}
+
+#age-yes:hover {
+    background-color: #45a049;
 }
 
 #age-no:hover {
