@@ -1,5 +1,4 @@
-//
-<html lang="pt-BR">
+/*<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -355,4 +354,4 @@ window.onload = function() {
         displayCategory(categories[category], category.toLowerCase());
     });
 };
-preciso q vc coloque uma programaçao q pergunte se a pessoa tem 18 anos e um botao de sim e um de nao ao clicar no sim vc continua no site se vc clicar no nao direciona para o google td isso de forma sobre posta ao site  //
+preciso q vc coloque uma programaçao q pergunte se a pessoa tem 18 anos e um botao de sim e um de nao ao clicar no sim vc continua no site se vc clicar no nao direciona para o google td isso de forma sobre posta ao site */
