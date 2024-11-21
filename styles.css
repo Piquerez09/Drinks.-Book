@@ -9,17 +9,14 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #f8f8f8;
+    color: #333;
 }
 
-/* Modo Escuro */
+/* Estilo Dark Mode */
 body.dark-mode {
     background-color: #1e2a3a;
     color: #ecf0f1;
-}
-
-body {
-    background-color: #ecf0f1;
-    color: #333;
 }
 
 /* Verificação de Idade */
@@ -37,7 +34,7 @@ body {
 }
 
 .popup {
-    background: #e67e22;
+    background: #c0392b;
     color: #fff;
     padding: 40px;
     border-radius: 10px;
@@ -117,36 +114,124 @@ nav ul li a:hover {
 }
 
 #criar-receita form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#criar-receita input, #criar-receita select {
+#criar-receita label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1rem;
+}
+
+#criar-receita input,
+#criar-receita select {
+    width: 100%;
     padding: 10px;
-    margin: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 80%;
 }
 
-#generate-recipe {
+#criar-receita button {
     background: #f39c12;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-#generate-recipe:hover {
+#criar-receita button:hover {
     background: #e67e22;
 }
 
-/* Seção Loja */
+#recipe-result {
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção Itália Drinks */
+#italia-drinks {
+    padding: 50px 20px;
+    background: #ecf0f1;
+}
+
+#italia-drinks h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#italia-drinks ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#italia-drinks li {
+    margin: 10px;
+}
+
+#italia-drinks button {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+#italia-drinks button:hover {
+    background: #f39c12;
+}
+
+#recipe-display {
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#back-to-list {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+#back-to-list:hover {
+    background: #f39c12;
+}
+
+/* Loja */
 #marketplace {
     padding: 50px 20px;
     background: #ecf0f1;
+}
+
+#marketplace h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .products {
@@ -159,35 +244,45 @@ nav ul li a:hover {
     background: #fff;
     padding: 20px;
     margin: 10px;
-    width: 250px;
-    text-align: center;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
 }
 
 .product-item img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    border-radius: 5px;
+}
+
+.product-item p {
+    margin: 10px 0;
+    font-size: 1.2rem;
 }
 
 .buy-button {
-    background: #2ecc71;
+    background: #f39c12;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
 }
 
 .buy-button:hover {
-    background: #27ae60;
+    background: #e67e22;
 }
 
 /* Rodapé */
 footer {
     background: #2c3e50;
     color: #fff;
-    text-align: center;
     padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
 }
