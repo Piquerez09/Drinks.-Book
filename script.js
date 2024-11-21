@@ -1,24 +1,23 @@
-// Categorias de Bebidas
 const categories = {
     "Cóctéis Clássicos": [
-        { name: "Margarita", ingredients: ["Tequila", "Triple Sec", "Lima"], instructions: "Misture os ingredientes e sirva com sal na borda da taça." },
         { name: "Martini", ingredients: ["Gin", "Vermute"], instructions: "Misture os ingredientes em um copo misturador e coe para uma taça." },
+        { name: "Margarita", ingredients: ["Tequila", "Lima", "Licor de laranja"], instructions: "Misture os ingredientes e sirva com gelo." }
     ],
     "Cóctéis Tropicais": [
         { name: "Piña Colada", ingredients: ["Rum", "Coco", "Ananás"], instructions: "Misture todos os ingredientes no liquidificador." },
-        { name: "Mojito", ingredients: ["Rum", "Menta", "Limão", "Açúcar"], instructions: "Misture todos os ingredientes e sirva com gelo." },
+        { name: "Mojito", ingredients: ["Rum", "Menta", "Limão", "Açúcar"], instructions: "Misture todos os ingredientes e sirva com gelo." }
     ],
     "Cóctéis Modernos": [
         { name: "Gin Tônica", ingredients: ["Gin", "Água tônica", "Limão"], instructions: "Misture gin com água tônica e adicione limão." },
-        { name: "Negroni", ingredients: ["Gin", "Vermute", "Campari"], instructions: "Misture todos os ingredientes e sirva com gelo." },
+        { name: "Negroni", ingredients: ["Gin", "Vermute", "Campari"], instructions: "Misture todos os ingredientes e sirva com gelo." }
     ],
     "Bebidas da Itália": [
         { name: "Spritz", ingredients: ["Aperol", "Espumante", "Água com gás"], instructions: "Misture Aperol, espumante e água com gás." },
-        { name: "Limoncello", ingredients: ["Limão", "Álcool", "Açúcar"], instructions: "Deixe os limões de molho no álcool, coe e adicione açúcar." },
+        { name: "Limoncello", ingredients: ["Limão", "Álcool", "Açúcar"], instructions: "Deixe os limões de molho no álcool, coe e adicione açúcar." }
     ],
 };
 
-// Exibir as bebidas por categoria
+// Exibir bebidas por categoria
 function displayCategory(drinks, category) {
     const categoryList = document.getElementById(`${category}-list`);
     categoryList.innerHTML = '';
@@ -30,7 +29,7 @@ function displayCategory(drinks, category) {
     });
 }
 
-// Exibir a receita ao clicar na bebida
+// Exibir a receita de uma bebida
 function showRecipe(drink, category) {
     const categorySection = document.getElementById(category);
     const recipeDiv = document.createElement('div');
@@ -50,7 +49,7 @@ function backToCategory(category) {
     displayCategory(categories[category], category);
 }
 
-// Função de pesquisa
+// Pesquisa de receitas
 function searchRecipes() {
     const query = document.getElementById('search').value.toLowerCase();
     const results = [];
@@ -64,7 +63,7 @@ function searchRecipes() {
     displaySearchResults(results);
 }
 
-// Exibir os resultados de pesquisa
+// Exibir resultados da pesquisa
 function displaySearchResults(results) {
     const searchResultsDiv = document.getElementById('generated-recipes');
     searchResultsDiv.innerHTML = '';
@@ -84,7 +83,7 @@ function displaySearchResults(results) {
     });
 }
 
-// Função de cadastro
+// Formulário de cadastro
 function openSignupForm() {
     const formContainer = document.getElementById('signup-form-container');
     formContainer.innerHTML = `
@@ -113,17 +112,17 @@ function registerUser() {
     }
 }
 
-// IA: Perguntas sobre bebidas
-function askAI() {
+// IA para criar novas receitas
+function createRecipe() {
     const input = document.getElementById('ai-input').value;
     const messages = document.getElementById('ai-messages');
     messages.innerHTML += `<p><strong>Você:</strong> ${input}</p>`;
-    const response = `Eu sou a IA. Você perguntou sobre ${input}. Aqui está a resposta: [Informações da bebida].`;
+    const response = `Receita criada: ${input}. Agora é só misturar os ingredientes e adicionar as instruções.`;
     messages.innerHTML += `<p><strong>IA:</strong> ${response}</p>`;
     document.getElementById('ai-input').value = '';
 }
 
-// Exibir as bebidas ao carregar a página
+// Exibir bebidas ao carregar a página
 window.onload = function() {
     Object.keys(categories).forEach(category => {
         displayCategory(categories[category], category.toLowerCase());
