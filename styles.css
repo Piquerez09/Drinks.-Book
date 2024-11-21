@@ -150,3 +150,58 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* Estilos para o Modal de Verificação de Idade */
+.age-verification-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    z-index: 1000; /* Coloca o modal acima de outros elementos */
+}
+
+.age-verification-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.age-verification-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.age-verification-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.age-verification-buttons button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.age-verification-buttons button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+#age-no {
+    background-color: #f44336;
+}
+
+#age-no:hover {
+    background-color: #d32f2f;
+}

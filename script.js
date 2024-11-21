@@ -124,6 +124,17 @@ function createRecipe() {
     document.getElementById('ai-container').style.display = 'block';
 }
 
+// Função para fechar o modal de verificação de idade
+function continueSite() {
+    const ageVerificationModal = document.getElementById('age-verification-modal');
+    ageVerificationModal.style.display = 'none'; // Fecha o modal
+}
+
+// Função para redirecionar para o Google
+function redirectToGoogle() {
+    window.location.href = 'https://www.google.com'; // Redireciona para o Google
+}
+
 // Inicializa as categorias
 window.onload = function() {
     Object.keys(categories).forEach(category => {
