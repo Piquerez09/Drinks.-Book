@@ -47,7 +47,7 @@ function showRecipe(drink, category) {
 
 // Volta para a lista de bebidas da categoria
 function backToCategory(category) {
-    displayCategory(categories[category], category);
+    displayCategory(categories[category], category.toLowerCase());
 }
 
 // Função de busca
