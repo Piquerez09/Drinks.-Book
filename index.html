@@ -10,16 +10,15 @@
 <body>
 
 <header>
-    Catálogo de Bebidas
+    <div class="logo">Catálogo de Bebidas</div>
+    <nav>
+        <a href="#clássicos">Clássicos</a>
+        <a href="#tropicais">Tropicais</a>
+        <a href="#modernos">Modernos</a>
+        <a href="#italia">Bebidas da Itália</a>
+        <a href="#shop">Loja</a>
+    </nav>
 </header>
-
-<nav>
-    <a href="#clássicos">Cóctéis Clássicos</a>
-    <a href="#tropicais">Cóctéis Tropicais</a>
-    <a href="#modernos">Cóctéis Modernos</a>
-    <a href="#italia">Bebidas da Itália</a>
-    <a href="#shop">Loja</a>
-</nav>
 
 <!-- Formulário de Cadastro no topo -->
 <div id="signup-section">
@@ -27,52 +26,48 @@
     <div id="signup-form-container"></div>
 </div>
 
+<!-- Pesquisa -->
 <div id="search-section">
     <input type="text" id="search" placeholder="Pesquisar bebidas...">
     <button id="search-btn" onclick="searchRecipes()">Pesquisar</button>
 </div>
 
-<div id="generated-recipes"></div>
+<!-- Exibição de Categorias -->
+<div id="categories">
+    <div id="clássicos" class="category">
+        <h2>Cóctéis Clássicos</h2>
+        <ul id="clássicos-list"></ul>
+    </div>
 
-<div id="clássicos" class="category">
-    <h2>Cóctéis Clássicos</h2>
-    <ul id="clássicos-list"></ul>
+    <div id="tropicais" class="category">
+        <h2>Cóctéis Tropicais</h2>
+        <ul id="tropicais-list"></ul>
+    </div>
+
+    <div id="modernos" class="category">
+        <h2>Cóctéis Modernos</h2>
+        <ul id="modernos-list"></ul>
+    </div>
+
+    <div id="italia" class="category">
+        <h2>Bebidas da Itália</h2>
+        <ul id="italia-list"></ul>
+    </div>
 </div>
 
-<div id="tropicais" class="category">
-    <h2>Cóctéis Tropicais</h2>
-    <ul id="tropicais-list"></ul>
-</div>
-
-<div id="modernos" class="category">
-    <h2>Cóctéis Modernos</h2>
-    <ul id="modernos-list"></ul>
-</div>
-
-<div id="italia" class="category">
-    <h2>Bebidas da Itália</h2>
-    <ul id="italia-list"></ul>
-</div>
-
-<div id="shop" class="category">
-    <h2>Loja de Bebidas</h2>
-    <button class="shop-btn" onclick="openSignupForm()">Cadastrar-se para Comprar</button>
-    <div id="signup-form-container"></div>
-</div>
-
-<footer>
-    <p>&copy; 2024 Catálogo de Bebidas. Todos os direitos reservados.</p>
-    <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a></p>
-</footer>
-
-<!-- Chatbot IA -->
+<!-- IA -->
 <div id="ai-container">
     <div id="ai-window">
         <div id="ai-messages"></div>
-        <input type="text" id="ai-input" placeholder="Crie uma nova receita...">
+        <input type="text" id="ai-input" placeholder="Crie uma nova receita..." onkeyup="checkInput(event)">
         <button onclick="createRecipe()">Criar Receita</button>
     </div>
 </div>
+
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2024 Catálogo de Bebidas. Todos os direitos reservados.</p>
+</footer>
 
 <script src="scripts.js"></script>
 </body>

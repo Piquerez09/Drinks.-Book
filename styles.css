@@ -7,7 +7,6 @@ body {
     color: #333;
 }
 
-/* Cabeçalho */
 header {
     background-color: #2a2a2a;
     padding: 20px;
@@ -18,7 +17,6 @@ header {
     letter-spacing: 2px;
 }
 
-/* Navegação */
 nav {
     background-color: #333;
     color: white;
@@ -40,18 +38,11 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Formulário de Cadastro no topo */
 #signup-section {
     padding: 20px;
     text-align: center;
 }
 
-#signup-form-container {
-    display: flex;
-    justify-content: center;
-}
-
-/* Seção de pesquisa */
 #search-section {
     display: flex;
     justify-content: center;
@@ -78,7 +69,6 @@ nav a:hover {
     background-color: #555;
 }
 
-/* Categorias de bebidas */
 .category {
     padding: 20px;
     margin: 20px 0;
@@ -109,89 +99,6 @@ nav a:hover {
     color: #007BFF;
 }
 
-/* Resultados da pesquisa */
-#generated-recipes {
-    padding: 20px;
-}
-
-#generated-recipes div {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Rodapé */
-footer {
-    background-color: #2a2a2a;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Estilo de Botão da Loja */
-.shop-btn {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-}
-
-.shop-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Formulário de Cadastro */
-.signup-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.signup-form input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 1.1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.signup-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    font-size: 1.1em;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.signup-form button:hover {
-    background-color: #555;
-}
-
-/* Estilo IA */
 #ai-container {
     position: fixed;
     bottom: 10px;
@@ -212,7 +119,6 @@ footer a:hover {
 #ai-messages {
     padding: 10px;
     font-size: 1.1em;
-    color: #333;
     max-height: 300px;
     overflow-y: auto;
 }
@@ -220,23 +126,27 @@ footer a:hover {
 #ai-input {
     width: 100%;
     padding: 10px;
-    margin-top: 10px;
     font-size: 1.1em;
+    margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-#ai-window button {
-    margin-top: 10px;
-    background-color: #333;
+footer {
+    background-color: #2a2a2a;
     color: white;
-    border: none;
-    padding: 10px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
     width: 100%;
-    font-size: 1.1em;
-    cursor: pointer;
 }
 
-#ai-window button:hover {
-    background-color: #555;
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

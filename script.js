@@ -1,23 +1,24 @@
+// Dados das bebidas
 const categories = {
-    "Cóctéis Clássicos": [
+    "Clássicos": [
         { name: "Martini", ingredients: ["Gin", "Vermute"], instructions: "Misture os ingredientes em um copo misturador e coe para uma taça." },
         { name: "Margarita", ingredients: ["Tequila", "Lima", "Licor de laranja"], instructions: "Misture os ingredientes e sirva com gelo." }
     ],
-    "Cóctéis Tropicais": [
+    "Tropicais": [
         { name: "Piña Colada", ingredients: ["Rum", "Coco", "Ananás"], instructions: "Misture todos os ingredientes no liquidificador." },
         { name: "Mojito", ingredients: ["Rum", "Menta", "Limão", "Açúcar"], instructions: "Misture todos os ingredientes e sirva com gelo." }
     ],
-    "Cóctéis Modernos": [
+    "Modernos": [
         { name: "Gin Tônica", ingredients: ["Gin", "Água tônica", "Limão"], instructions: "Misture gin com água tônica e adicione limão." },
         { name: "Negroni", ingredients: ["Gin", "Vermute", "Campari"], instructions: "Misture todos os ingredientes e sirva com gelo." }
     ],
     "Bebidas da Itália": [
         { name: "Spritz", ingredients: ["Aperol", "Espumante", "Água com gás"], instructions: "Misture Aperol, espumante e água com gás." },
         { name: "Limoncello", ingredients: ["Limão", "Álcool", "Açúcar"], instructions: "Deixe os limões de molho no álcool, coe e adicione açúcar." }
-    ],
+    ]
 };
 
-// Exibir bebidas por categoria
+// Exibe as bebidas da categoria
 function displayCategory(drinks, category) {
     const categoryList = document.getElementById(`${category}-list`);
     categoryList.innerHTML = '';
@@ -29,7 +30,7 @@ function displayCategory(drinks, category) {
     });
 }
 
-// Exibir a receita de uma bebida
+// Exibe a receita ao clicar na bebida
 function showRecipe(drink, category) {
     const categorySection = document.getElementById(category);
     const recipeDiv = document.createElement('div');
@@ -44,12 +45,12 @@ function showRecipe(drink, category) {
     categorySection.appendChild(recipeDiv);
 }
 
-// Voltar para a lista de bebidas
+// Volta para a lista de bebidas da categoria
 function backToCategory(category) {
     displayCategory(categories[category], category);
 }
 
-// Pesquisa de receitas
+// Função de busca
 function searchRecipes() {
     const query = document.getElementById('search').value.toLowerCase();
     const results = [];
@@ -63,7 +64,7 @@ function searchRecipes() {
     displaySearchResults(results);
 }
 
-// Exibir resultados da pesquisa
+// Exibe os resultados da pesquisa
 function displaySearchResults(results) {
     const searchResultsDiv = document.getElementById('generated-recipes');
     searchResultsDiv.innerHTML = '';
@@ -83,7 +84,7 @@ function displaySearchResults(results) {
     });
 }
 
-// Formulário de cadastro
+// Função de cadastro
 function openSignupForm() {
     const formContainer = document.getElementById('signup-form-container');
     formContainer.innerHTML = `
@@ -98,7 +99,7 @@ function openSignupForm() {
     `;
 }
 
-// Cadastro do usuário
+// Função para registrar o usuário
 function registerUser() {
     const email = document.getElementById('email').value;
     const cpf = document.getElementById('cpf').value;
@@ -112,7 +113,7 @@ function registerUser() {
     }
 }
 
-// IA para criar novas receitas
+// Função para criar uma nova receita
 function createRecipe() {
     const input = document.getElementById('ai-input').value;
     const messages = document.getElementById('ai-messages');
@@ -120,9 +121,10 @@ function createRecipe() {
     const response = `Receita criada: ${input}. Agora é só misturar os ingredientes e adicionar as instruções.`;
     messages.innerHTML += `<p><strong>IA:</strong> ${response}</p>`;
     document.getElementById('ai-input').value = '';
+    document.getElementById('ai-container').style.display = 'block';
 }
 
-// Exibir bebidas ao carregar a página
+// Inicializa as categorias
 window.onload = function() {
     Object.keys(categories).forEach(category => {
         displayCategory(categories[category], category.toLowerCase());
