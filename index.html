@@ -19,6 +19,7 @@
         </div>
     </div>
 
+    <!-- Cabeçalho -->
     <header>
         <div class="logo">Catálogo de Bebidas</div>
         <nav>
@@ -30,47 +31,32 @@
         </nav>
     </header>
 
-    <!-- Formulário de Cadastro no topo -->
-    <div id="signup-section">
-        <button class="shop-btn" onclick="openSignupForm()">Cadastrar-se para Comprar</button>
-        <div id="signup-form-container"></div>
-    </div>
+    <!-- Botão de alternância entre modo claro e escuro -->
+    <button id="theme-toggle" class="theme-toggle">Modo Escuro</button>
 
-    <!-- Pesquisa -->
+    <!-- Seção de Pesquisa -->
     <div id="search-section">
         <input type="text" id="search" placeholder="Pesquisar bebidas...">
         <button id="search-btn" onclick="searchRecipes()">Pesquisar</button>
     </div>
 
-    <!-- Exibição de Categorias -->
+    <!-- Categorias -->
     <div id="categories">
         <div id="clássicos" class="category">
             <h2>Cóctéis Clássicos</h2>
             <ul id="clássicos-list"></ul>
         </div>
-
         <div id="tropicais" class="category">
             <h2>Cóctéis Tropicais</h2>
             <ul id="tropicais-list"></ul>
         </div>
-
         <div id="modernos" class="category">
             <h2>Cóctéis Modernos</h2>
             <ul id="modernos-list"></ul>
         </div>
-
         <div id="italia" class="category">
             <h2>Bebidas da Itália</h2>
             <ul id="italia-list"></ul>
-        </div>
-    </div>
-
-    <!-- IA -->
-    <div id="ai-container">
-        <div id="ai-window">
-            <div id="ai-messages"></div>
-            <input type="text" id="ai-input" placeholder="Digite o que você deseja (ingredientes, ocasião, etc.)..." onkeyup="checkInput(event)">
-            <button onclick="createRecipe()">Criar Receita</button>
         </div>
     </div>
 

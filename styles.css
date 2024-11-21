@@ -1,116 +1,102 @@
+/* Reset e Configurações Básicas */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Cabeçalho e Navegação */
-header {
-    background-color: #2a2a2a;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    font-size: 2em;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-nav {
+/* Modo Escuro */
+.dark-mode {
     background-color: #333;
-    color: white;
-    padding: 15px 20px;
+    color: #f5f5f5;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Botão de Alternância de Tema */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Modal de Verificação de Idade */
+.age-verification-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Seções e Categorias */
-#signup-section,
-#search-section {
-    text-align: center;
+.age-verification-content {
+    background: white;
     padding: 20px;
-}
-
-#search {
-    padding: 10px;
-    width: 300px;
-    font-size: 1.1em;
-}
-
-#search-btn {
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    border: none;
-    font-size: 1.1em;
-}
-
-#search-btn:hover {
-    background-color: #555;
-}
-
-.category {
-    padding: 20px;
-    margin: 20px 0;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.category h2 {
-    font-size: 2em;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.category li {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.category li:hover {
-    color: #007BFF;
-}
-
-/* IA */
-#ai-container {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
     border-radius: 8px;
 }
 
-#ai-window {
-    width: 300px;
-    max-height: 400px;
-    overflow-y: auto;
+.age-verification-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Categorias */
+.category {
+    padding: 20px;
+}
+
+.category h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category li {
+    margin: 5px 0;
 }
 
 /* Rodapé */
 footer {
-    background-color: #2a2a2a;
-    color: white;
+    background-color: #000;
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    width: 100%;
-    position: relative;
+    padding: 10px;
 }
