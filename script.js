@@ -1,44 +1,32 @@
-// Função de cadastro
-document.getElementById('register-form').addEventListener('submit', function (e) {
+// Função para mostrar a receita ao clicar no nome da bebida
+function mostrarReceita(bebida) {
+    let receitaText;
+    if (bebida === 'margarita') {
+        receitaText = 'Receita de Margarita: Tequila, Triple sec, Limão, Sal. Misture e sirva!';
+    } else if (bebida === 'mojito') {
+        receitaText = 'Receita de Mojito: Rum, Hortelã, Açúcar, Limão, Água com gás.';
+    } else if (bebida === 'pinaColada') {
+        receitaText = 'Receita de Piña Colada: Rum, Abacaxi, Creme de coco.';
+    } else if (bebida === 'caipirinha') {
+        receitaText = 'Receita de Caipirinha: Cachaça, Limão, Açúcar.';
+    } else if (bebida === 'dryMartini') {
+        receitaText = 'Receita de Dry Martini: Gin, Vermute seco.';
+    } else if (bebida === 'negroni') {
+        receitaText = 'Receita de Negroni: Gin, Vermute rosso, Campari.';
+    }
+
+    document.getElementById('receitaText').textContent = receitaText;
+    document.getElementById('receita').style.display = 'block';
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+// Função para voltar para a lista de categorias
+function voltarCategorias() {
+    document.getElementById('receita').style.display = 'none';
+}
+
+// Função de cadastro (simulação)
+document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault();
     alert('Cadastro realizado com sucesso!');
 });
-
-// Função de navegação nas categorias
-function loadCategory(categoryName) {
-    const categorySection = document.getElementById('categories');
-    categorySection.innerHTML = `<h3>${categoryName}</h3>`;
-    
-    const drinks = {
-        'Classicos': ['Margarita', 'Martini', 'Old Fashioned'],
-        'Tropicais': ['Piña Colada', 'Mai Tai', 'Daiquiri'],
-        'Modernos': ['Espresso Martini', 'Negroni Sbagliato', 'Aperol Spritz'],
-        'Italia Drinks': ['Limoncello', 'Negroni', 'Aperol Spritz']
-    };
-
-    drinks[categoryName].forEach(drink => {
-        const drinkElement = document.createElement('div');
-        drinkElement.textContent = drink;
-        drinkElement.classList.add('drink-name');
-        drinkElement.addEventListener('click', () => showRecipe(drink));
-        categorySection.appendChild(drinkElement);
-    });
-}
-
-// Função para mostrar a receita
-function showRecipe(drinkName) {
-    const recipes = {
-        'Margarita': 'Receita: Tequila, Cointreau, suco de limão.',
-        'Martini': 'Receita: Gin, vermouth.',
-        // Adicionar mais receitas...
-    };
-    document.getElementById('categories').innerHTML = `
-        <h3>${drinkName}</h3>
-        <p>${recipes[drinkName]}</p>
-        <button onclick="reloadCategories()">Voltar</button>
-    `;
-}
-
-function reloadCategories() {
-    location.reload();
-}
