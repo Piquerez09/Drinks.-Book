@@ -1,84 +1,50 @@
- <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Catálogo de Bebidas</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <!-- Modal de Verificação de Idade -->
-        <div id="age-verification-modal" class="age-verification-modal">
-            <div class="age-verification-content">
-                <h2>Você tem 18 anos ou mais?</h2>
-                <div class="age-verification-buttons">
-                    <button id="age-yes">Sim</button>
-                    <button id="age-no">Não</button>
-                </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Bebidas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Modal de Verificação de Idade -->
+    <div id="age-verification-modal" class="age-verification-modal">
+        <div class="age-verification-content">
+            <h2>Você tem 18 anos ou mais?</h2>
+            <div class="age-verification-buttons">
+                <button id="age-yes">Sim</button>
+                <button id="age-no">Não</button>
             </div>
         </div>
-    
-<header>
-    <div class="logo">Catálogo de Bebidas</div>
-    <nav>
-        <a href="#clássicos">Clássicos</a>
-        <a href="#tropicais">Tropicais</a>
-        <a href="#modernos">Modernos</a>
-        <a href="#italia">Bebidas da Itália</a>
-        <a href="#shop">Loja</a>
-    </nav>
-</header>
-
-<!-- Formulário de Cadastro no topo -->
-<div id="signup-section">
-    <button class="shop-btn" onclick="openSignupForm()">Cadastrar-se para Comprar</button>
-    <div id="signup-form-container"></div>
-</div>
-
-<!-- Pesquisa -->
-<div id="search-section">
-    <input type="text" id="search" placeholder="Pesquisar bebidas...">
-    <button id="search-btn" onclick="searchRecipes()">Pesquisar</button>
-</div>
-
-<!-- Exibição de Categorias -->
-<div id="categories">
-    <div id="clássicos" class="category">
-        <h2>Cóctéis Clássicos</h2>
-        <ul id="clássicos-list"></ul>
     </div>
 
-    <div id="tropicais" class="category">
-        <h2>Cóctéis Tropicais</h2>
-        <ul id="tropicais-list"></ul>
+    <!-- Botões de Modo Claro/Escuro -->
+    <div id="theme-switcher">
+        <button id="light-mode-btn">Modo Claro</button>
+        <button id="dark-mode-btn">Modo Escuro</button>
     </div>
 
-    <div id="modernos" class="category">
-        <h2>Cóctéis Modernos</h2>
-        <ul id="modernos-list"></ul>
-    </div>
+    <!-- Conteúdo principal -->
+    <header>
+        <div class="logo">Catálogo de Bebidas</div>
+        <nav>
+            <a href="#clássicos">Clássicos</a>
+            <a href="#tropicais">Tropicais</a>
+            <a href="#modernos">Modernos</a>
+            <a href="#italia">Bebidas da Itália</a>
+            <a href="#shop">Loja</a>
+        </nav>
+    </header>
 
-    <div id="italia" class="category">
-        <h2>Bebidas da Itália</h2>
-        <ul id="italia-list"></ul>
-    </div>
-</div>
+    <main>
+        <p>Bem-vindo ao site! Explore nossa seleção de bebidas exclusivas.</p>
+    </main>
 
-<!-- IA -->
-<div id="ai-container">
-    <div id="ai-window">
-        <div id="ai-messages"></div>
-        <input type="text" id="ai-input" placeholder="Digite o que você deseja (ingredientes, ocasião, etc.)..." onkeyup="checkInput(event)">
-        <button onclick="createRecipe()">Criar Receita</button>
-    </div>
-</div>
+    <footer>
+        <p>&copy; 2024 Catálogo de Bebidas. Todos os direitos reservados.</p>
+    </footer>
 
-<!-- Rodapé -->
-<footer>
-    <p>&copy; 2024 Catálogo de Bebidas. Todos os direitos reservados.</p>
-</footer>
-
-<script src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
-</html>                                                                
+</html>

@@ -1,15 +1,8 @@
-// Função para continuar no site após o clique em "Sim"
+// Função para continuar no site após clicar em "Sim"
 function continueSite() {
-    const ageVerificationModal = document.getElementById('age-verification-modal');
-    if (ageVerificationModal) {
-        // Oculta o modal
-        ageVerificationModal.classList.add('hidden');
-
-        // Permite rolagem no site
-        document.body.style.overflow = 'auto';
-    } else {
-        console.error("Modal de verificação de idade não encontrado.");
-    }
+    const modal = document.getElementById('age-verification-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
 }
 
 // Função para redirecionar ao Google caso clique em "Não"
@@ -17,29 +10,27 @@ function redirectToGoogle() {
     window.location.href = 'https://www.google.com';
 }
 
-// Adiciona eventos aos botões após carregar a página
+// Função para alternar entre modos Claro e Escuro
+function toggleDarkMode(isDark) {
+    if (isDark) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+}
+
+// Configuração dos eventos ao carregar a página
 window.onload = function () {
     const ageYesButton = document.getElementById('age-yes');
     const ageNoButton = document.getElementById('age-no');
-    const ageVerificationModal = document.getElementById('age-verification-modal');
+    const lightModeBtn = document.getElementById('light-mode-btn');
+    const darkModeBtn = document.getElementById('dark-mode-btn');
 
-    // Certifica-se de que o modal esteja visível ao carregar a página
-    if (ageVerificationModal) {
-        ageVerificationModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Bloqueia a rolagem enquanto o modal estiver ativo
-    }
+    // Configura os botões do modal
+    ageYesButton.addEventListener('click', continueSite);
+    ageNoButton.addEventListener('click', redirectToGoogle);
 
-    // Configura o botão "Sim"
-    if (ageYesButton) {
-        ageYesButton.addEventListener('click', continueSite);
-    } else {
-        console.error("Botão 'Sim' não encontrado.");
-    }
-
-    // Configura o botão "Não"
-    if (ageNoButton) {
-        ageNoButton.addEventListener('click', redirectToGoogle);
-    } else {
-        console.error("Botão 'Não' não encontrado.");
-    }
+    // Configura os botões de tema
+    lightModeBtn.addEventListener('click', () => toggleDarkMode(false));
+    darkModeBtn.addEventListener('click', () => toggleDarkMode(true));
 };
