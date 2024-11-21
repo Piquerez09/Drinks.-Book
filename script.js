@@ -1,4 +1,4 @@
-// Função para alternar entre tema claro e escuro
+// Função para alternar entre tema claro e escuro 
 function toggleTheme() {
     const body = document.body;
     const themeBtn = document.getElementById('theme-btn');
@@ -20,11 +20,22 @@ function redirectToGoogle() {
 // Função para continuar no site após o clique em "Sim"
 function continueSite() {
     const ageVerificationModal = document.getElementById('age-verification-modal');
-    ageVerificationModal.style.display = 'none'; // Fecha o modal
-    
-    // Habilita o conteúdo do site após a confirmação de maioridade
-    document.body.style.overflow = 'auto'; // Restaura a rolagem do body
+    // Oculta o modal
+    ageVerificationModal.style.display = 'none'; 
+
+    // Permite rolagem no corpo do site
+    document.body.style.overflow = 'auto';
 }
+
+// Inicializa o modal de verificação de idade
+window.onload = function() {
+    const ageVerificationModal = document.getElementById('age-verification-modal');
+    // Exibe o modal ao carregar a página
+    ageVerificationModal.style.display = 'flex';
+
+    // Bloqueia a rolagem do site enquanto o modal estiver visível
+    document.body.style.overflow = 'hidden';
+};
 
 // Exibição das categorias de bebidas
 const categories = {
