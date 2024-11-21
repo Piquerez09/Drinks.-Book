@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Bebidas</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS externo -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -59,6 +59,15 @@
     <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a></p>
 </footer>
 
-<script src="scripts.js"></script> <!-- Link para o JavaScript externo -->
+<!-- Chatbot IA -->
+<div id="ai-container">
+    <div id="ai-window">
+        <div id="ai-messages"></div>
+        <input type="text" id="ai-input" placeholder="Pergunte sobre as bebidas...">
+        <button onclick="askAI()">Enviar</button>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
 </body>
 </html>
