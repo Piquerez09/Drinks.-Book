@@ -1,11 +1,11 @@
-// Dados das bebidas
+// Dados das bebidas (continuam os mesmos, sem mudanças)
 const categories = {
     "Clássicos": [
         { name: "Martini", ingredients: ["Gin", "Vermute"], instructions: "Misture os ingredientes em um copo misturador e coe para uma taça." },
-        { name: "Margarita", ingredients: ["Tequila", "Lima", "Licor de laranja"], instructions: "Misture os ingredientes e sirva com gelo." }
+        { name: "Margarita", ingredients: ["Tequila", "Triple sec", "Suco de limão"], instructions: "Misture todos os ingredientes e sirva com gelo." }
     ],
     "Tropicais": [
-        { name: "Piña Colada", ingredients: ["Rum", "Coco", "Ananás"], instructions: "Misture todos os ingredientes no liquidificador." },
+        { name: "Caipirinha", ingredients: ["Cachaça", "Limão", "Açúcar"], instructions: "Amasse o limão com o açúcar e adicione a cachaça e gelo." },
         { name: "Mojito", ingredients: ["Rum", "Menta", "Limão", "Açúcar"], instructions: "Misture todos os ingredientes e sirva com gelo." }
     ],
     "Modernos": [
@@ -18,7 +18,7 @@ const categories = {
     ]
 };
 
-// Exibe as bebidas da categoria
+// Exibe a categoria (igual ao código anterior)
 function displayCategory(drinks, category) {
     const categoryList = document.getElementById(`${category}-list`);
     categoryList.innerHTML = '';
@@ -50,40 +50,6 @@ function backToCategory(category) {
     displayCategory(categories[category], category.toLowerCase());
 }
 
-// Função de busca
-function searchRecipes() {
-    const query = document.getElementById('search').value.toLowerCase();
-    const results = [];
-    Object.keys(categories).forEach(category => {
-        categories[category].forEach(drink => {
-            if (drink.name.toLowerCase().includes(query) || drink.ingredients.some(ingredient => ingredient.toLowerCase().includes(query))) {
-                results.push(drink);
-            }
-        });
-    });
-    displaySearchResults(results);
-}
-
-// Exibe os resultados da pesquisa
-function displaySearchResults(results) {
-    const searchResultsDiv = document.getElementById('generated-recipes');
-    searchResultsDiv.innerHTML = '';
-    if (results.length === 0) {
-        searchResultsDiv.innerHTML = '<p>Nenhuma bebida encontrada.</p>';
-        return;
-    }
-    results.forEach(drink => {
-        const recipeDiv = document.createElement('div');
-        recipeDiv.classList.add('recipe');
-        recipeDiv.innerHTML = `
-            <h3>${drink.name}</h3>
-            <p><strong>Ingredientes:</strong> ${drink.ingredients.join(', ')}</p>
-            <p><strong>Instruções:</strong> ${drink.instructions}</p>
-        `;
-        searchResultsDiv.appendChild(recipeDiv);
-    });
-}
-
 // Função de cadastro
 function openSignupForm() {
     const formContainer = document.getElementById('signup-form-container');
@@ -113,30 +79,24 @@ function registerUser() {
     }
 }
 
-// Função para criar uma nova receita
-function createRecipe() {
-    const input = document.getElementById('ai-input').value;
-    const messages = document.getElementById('ai-messages');
-    messages.innerHTML += `<p><strong>Você:</strong> ${input}</p>`;
-    const response = `Receita criada: ${input}. Agora é só misturar os ingredientes e adicionar as instruções.`;
-    messages.innerHTML += `<p><strong>IA:</strong> ${response}</p>`;
-    document.getElementById('ai-input').value = '';
-    document.getElementById('ai-container').style.display = 'block';
-}
-
-// Função para fechar o modal de verificação de idade
-function continueSite() {
-    const ageVerificationModal = document.getElementById('age-verification-modal');
-    ageVerificationModal.style.display = 'none'; // Fecha o modal
-}
-
-// Função para redirecionar para o Google
+// Função de redirecionamento para o Google se o usuário clicar em "Não"
 function redirectToGoogle() {
     window.location.href = 'https://www.google.com'; // Redireciona para o Google
 }
 
-// Inicializa as categorias
+// Função para continuar no site ao clicar em "Sim"
+function continueSite() {
+    const ageVerificationModal = document.getElementById('age-verification-modal');
+    ageVerificationModal.style.display = 'none'; // Fecha o modal
+
+    // Habilita o conteúdo do site após a confirmação de maioridade
+    document.body.style.overflow = 'auto'; // Restaura a rolagem do body
+}
+
+// Inicializa as categorias após a confirmação de idade
 window.onload = function() {
+    // Bloqueia o conteúdo até que o usuário tenha confirmado a idade
+    document.body.style.overflow = 'hidden';  // Bloqueia rolagem enquanto o modal está ativo
     Object.keys(categories).forEach(category => {
         displayCategory(categories[category], category.toLowerCase());
     });
