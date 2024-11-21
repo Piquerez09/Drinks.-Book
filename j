@@ -1,4 +1,4 @@
-/*<html lang="pt-BR">
+<!-- <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,19 +19,19 @@
     </nav>
 </header>
 
-<!-- Formulário de Cadastro no topo -->
+<!-- Formulário de Cadastro no topo 
 <div id="signup-section">
     <button class="shop-btn" onclick="openSignupForm()">Cadastrar-se para Comprar</button>
     <div id="signup-form-container"></div>
 </div>
 
-<!-- Pesquisa -->
+<!-- Pesquisa 
 <div id="search-section">
     <input type="text" id="search" placeholder="Pesquisar bebidas...">
     <button id="search-btn" onclick="searchRecipes()">Pesquisar</button>
 </div>
 
-<!-- Exibição de Categorias -->
+<!-- Exibição de Categorias 
 <div id="categories">
     <div id="clássicos" class="category">
         <h2>Cóctéis Clássicos</h2>
@@ -54,7 +54,7 @@
     </div>
 </div>
 
-<!-- IA -->
+<!-- IA 
 <div id="ai-container">
     <div id="ai-window">
         <div id="ai-messages"></div>
@@ -63,7 +63,7 @@
     </div>
 </div>
 
-<!-- Rodapé -->
+<!-- Rodapé 
 <footer>
     <p>&copy; 2024 Catálogo de Bebidas. Todos os direitos reservados.</p>
 </footer>
@@ -354,4 +354,3 @@ window.onload = function() {
         displayCategory(categories[category], category.toLowerCase());
     });
 };
-preciso q vc coloque uma programaçao q pergunte se a pessoa tem 18 anos e um botao de sim e um de nao ao clicar no sim vc continua no site se vc clicar no nao direciona para o google td isso de forma sobre posta ao site */
