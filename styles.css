@@ -1,125 +1,152 @@
-/* Style for the website - Luxurious Italian theme */
+/* Estilos gerais */
 body {
-    font-family: 'Garamond', serif;
-    color: #333;
-    background-color: #f8f8f8;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 header {
-    background-color: #000;
-    color: #fff;
+    background-color: #2a2a2a;
     padding: 20px;
     text-align: center;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+nav {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
     display: flex;
     justify-content: center;
+    gap: 30px;
 }
 
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
+nav a {
+    color: white;
     text-decoration: none;
     font-size: 1.2em;
-    transition: color 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-header nav ul li a:hover {
-    color: #ffd700;
+nav a:hover {
+    text-decoration: underline;
 }
 
-section {
+#signup-section {
     padding: 20px;
-    margin: 20px auto;
-    max-width: 1200px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-/* Categories styling */
-#categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    text-align: center;
+#search-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+#search {
+    padding: 10px;
+    width: 300px;
+    font-size: 1.1em;
+}
+
+#search-btn {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1em;
+}
+
+#search-btn:hover {
+    background-color: #555;
 }
 
 .category {
-    background-color: #f4f4f4;
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.category:hover {
-    background-color: #ffd700;
-    transform: scale(1.05);
+.category h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* IA styling */
-#ia {
-    margin: 30px auto;
+.category ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-#ia-form {
-    display: flex;
-    flex-direction: column;
-}
-
-#ia-form label {
-    margin-top: 10px;
-}
-
-#ia-form input, #ia-form select, #ia-form button {
-    margin-top: 5px;
-    padding: 10px;
-    font-size: 1em;
-}
-
-/* Marketplace items */
-.market-item {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
+.category li {
+    font-size: 1.2em;
     margin-bottom: 10px;
-}
-
-.market-item h3 {
-    margin: 0;
-}
-
-.market-item button {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 10px;
     cursor: pointer;
+    color: #333;
+}
+
+.category li:hover {
+    color: #007BFF;
+}
+
+#ai-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    display: none;
+}
+
+#ai-window {
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#ai-messages {
+    padding: 10px;
+    font-size: 1.1em;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#ai-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    margin-top: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.market-item button:hover {
-    background-color: #ffd700;
-}
-
-/* Footer styling */
 footer {
+    background-color: #2a2a2a;
+    color: white;
     text-align: center;
     padding: 20px;
-    background-color: #333;
-    color: #fff;
     position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Placeholder to reach 1000 lines */
-/* Additional luxurious styling for other elements (to be filled as needed) */
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
