@@ -2,7 +2,7 @@
 const categories = {
     "Cóctéis Clássicos": [
         { name: "Margarita", ingredients: ["Tequila", "Triple Sec", "Lima"], instructions: "Misture os ingredientes e sirva com sal na borda da taça." },
-        { name: "Martini", ingredients: ["Gin", "Vermute", "Azeitona"], instructions: "Misture os ingredientes e sirva com azeitona." },
+        { name: "Martini", ingredients: ["Gin", "Vermute"], instructions: "Misture os ingredientes em um copo misturador e coe para uma taça." },
     ],
     "Cóctéis Tropicais": [
         { name: "Piña Colada", ingredients: ["Rum", "Coco", "Ananás"], instructions: "Misture todos os ingredientes no liquidificador." },
@@ -18,7 +18,7 @@ const categories = {
     ],
 };
 
-// Função para exibir a lista de bebidas de cada categoria
+// Exibir as bebidas por categoria
 function displayCategory(drinks, category) {
     const categoryList = document.getElementById(`${category}-list`);
     categoryList.innerHTML = '';
@@ -30,7 +30,7 @@ function displayCategory(drinks, category) {
     });
 }
 
-// Exibir a receita ao clicar
+// Exibir a receita ao clicar na bebida
 function showRecipe(drink, category) {
     const categorySection = document.getElementById(category);
     const recipeDiv = document.createElement('div');
@@ -45,7 +45,7 @@ function showRecipe(drink, category) {
     categorySection.appendChild(recipeDiv);
 }
 
-// Voltar para os nomes das bebidas
+// Voltar para a lista de bebidas
 function backToCategory(category) {
     displayCategory(categories[category], category);
 }
@@ -64,7 +64,7 @@ function searchRecipes() {
     displaySearchResults(results);
 }
 
-// Exibir resultados de pesquisa
+// Exibir os resultados de pesquisa
 function displaySearchResults(results) {
     const searchResultsDiv = document.getElementById('generated-recipes');
     searchResultsDiv.innerHTML = '';
@@ -84,36 +84,36 @@ function displaySearchResults(results) {
     });
 }
 
-// Cadastro de usuário
+// Função de cadastro
 function openSignupForm() {
     const formContainer = document.getElementById('signup-form-container');
     formContainer.innerHTML = `
         <div class="signup-form">
-            <h3>Cadastre-se para comprar</h3>
+            <h3>Cadastro para Compra</h3>
             <input type="email" id="email" placeholder="Digite seu email" required>
+            <input type="text" id="cpf" placeholder="Digite seu CPF" required>
+            <input type="text" id="cep" placeholder="Digite seu CEP" required>
+            <input type="text" id="name" placeholder="Digite seu Nome Completo" required>
             <button onclick="registerUser()">Cadastrar</button>
         </div>
     `;
 }
 
-// Realiza o cadastro do usuário
+// Cadastro do usuário
 function registerUser() {
     const email = document.getElementById('email').value;
-    if (email) {
+    const cpf = document.getElementById('cpf').value;
+    const cep = document.getElementById('cep').value;
+    const name = document.getElementById('name').value;
+
+    if (email && cpf && cep && name) {
         alert(`Cadastro realizado com sucesso!`);
     } else {
-        alert(`Por favor, insira um email válido.`);
+        alert(`Por favor, preencha todos os campos.`);
     }
 }
 
-// Exibir as categorias ao carregar a página
-window.onload = function() {
-    Object.keys(categories).forEach(category => {
-        displayCategory(categories[category], category.toLowerCase());
-    });
-};
-
-// Funcionalidade da IA
+// IA: Perguntas sobre bebidas
 function askAI() {
     const input = document.getElementById('ai-input').value;
     const messages = document.getElementById('ai-messages');
@@ -122,3 +122,10 @@ function askAI() {
     messages.innerHTML += `<p><strong>IA:</strong> ${response}</p>`;
     document.getElementById('ai-input').value = '';
 }
+
+// Exibir as bebidas ao carregar a página
+window.onload = function() {
+    Object.keys(categories).forEach(category => {
+        displayCategory(categories[category], category.toLowerCase());
+    });
+};
