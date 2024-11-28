@@ -111,3 +111,35 @@ footer {
     text-align: center;
     padding: 20px;
 }
+/* Seção de Receitas */
+#recipe-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#drink-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#drink-list li {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #eaeaea;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+#drink-list li:hover {
+    background-color: #d4d4d4;
+}
+
+#recipe-details {
+    margin-top: 20px;
+}
