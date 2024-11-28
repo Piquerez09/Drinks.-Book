@@ -1,41 +1,4 @@
-// Função de Pesquisa
-document.getElementById('search-button').addEventListener('click', () => {
-    const query = document.getElementById('search-bar').value.toLowerCase();
-    if (!query) {
-        alert('Digite algo para pesquisar!');
-        return;
-    }
-    alert(`Você pesquisou por: ${query}`);
-});
-
-// Navegação por Categorias
-document.querySelectorAll('.category-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const category = item.dataset.category;
-        alert(`Você selecionou a categoria: ${category}`);
-        // Aqui você pode redirecionar ou carregar receitas específicas
-    });
-});
-// Função de Pesquisa
-document.getElementById('search-button').addEventListener('click', () => {
-    const query = document.getElementById('search-bar').value.toLowerCase();
-    if (!query) {
-        alert('Digite algo para pesquisar!');
-        return;
-    }
-    alert(`Você pesquisou por: ${query}`);
-});
-
-// Navegação por Categorias
-document.querySelectorAll('.category-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const category = item.dataset.category;
-        alert(`Você selecionou a categoria: ${category}`);
-        // Aqui você pode redirecionar ou carregar receitas específicas
-    });
-});
-
-// Dados de exemplo de bebidas e receitas
+// Dados de bebidas
 const drinks = {
     clássicos: [
         { name: "Margarita", recipe: "Tequila, suco de limão, licor de laranja e gelo." },
@@ -55,14 +18,14 @@ const drinks = {
     ],
 };
 
-// Mostrar lista de bebidas ao clicar em uma categoria
+// Exibe lista de bebidas ao clicar na categoria
 document.querySelectorAll('.category-item').forEach(item => {
     item.addEventListener('click', () => {
         const category = item.dataset.category;
         const categoryTitle = item.querySelector('h3').innerText;
         const drinkList = drinks[category];
 
-        // Atualiza a seção de receitas
+        // Atualiza a seção
         const recipeSection = document.getElementById('recipe-section');
         const categoryTitleElement = document.getElementById('category-title');
         const drinkListElement = document.getElementById('drink-list');
