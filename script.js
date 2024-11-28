@@ -1,4 +1,3 @@
-// Dados de bebidas
 const drinks = {
     clássicos: [
         { name: "Margarita", recipe: "Tequila, suco de limão, licor de laranja e gelo." },
@@ -18,11 +17,10 @@ const drinks = {
     ]
 };
 
-// Exibe lista de bebidas ao clicar
+// Exibe lista de bebidas ao clicar na categoria
 document.querySelectorAll('.category-item').forEach(item => {
     item.addEventListener('click', () => {
         const category = item.dataset.category;
-        const drinkList = drinks[category];
         const drinkListElement = document.getElementById('drink-list');
         const recipeDetails = document.getElementById('recipe-details');
 
@@ -30,7 +28,7 @@ document.querySelectorAll('.category-item').forEach(item => {
         drinkListElement.innerHTML = '';
         recipeDetails.classList.add('hidden');
 
-        drinkList.forEach(drink => {
+        drinks[category].forEach(drink => {
             const li = document.createElement('li');
             li.innerText = drink.name;
             li.addEventListener('click', () => {

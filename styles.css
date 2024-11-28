@@ -1,118 +1,116 @@
-/* Estilos Gerais */
+/* Estilo Geral */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #222;
+    background-color: #f8f6f3;
+    color: #333;
 }
 
 /* Cabeçalho */
-.header-italian {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #000;
-    color: #fff;
-    padding: 15px 30px;
+header {
+    background-color: #101010;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    letter-spacing: 1px;
 }
 
-.header-italian .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8em;
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    background-color: #333;
+    color: white;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
-.header-italian nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1em;
-}
-
-.header-italian nav a:hover {
+nav a:hover {
     text-decoration: underline;
 }
 
-/* Seção Hero */
-.hero {
-    background: url('https://source.unsplash.com/1600x900/?luxury,cocktails') no-repeat center center/cover;
-    color: #fff;
+/* Seção de Pesquisa */
+.search-section {
     text-align: center;
-    padding: 100px 20px;
-    font-family: 'Playfair Display', serif;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #e3e3e3, #ffffff);
 }
 
-.hero-content h1 {
-    font-size: 3em;
+.search-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
-.hero-content p {
-    font-size: 1.5em;
-}
-
-/* Pesquisa */
-.search-section {
-    padding: 30px 20px;
-    text-align: center;
-    background: #ececec;
-}
-
-.search-section input {
-    padding: 10px;
-    width: 60%;
-    border: 1px solid #ccc;
+#search-bar {
+    padding: 10px 15px;
+    width: 70%;
+    max-width: 600px;
+    border: 2px solid #ccc;
     border-radius: 5px;
+    font-size: 1em;
 }
 
-.search-section button {
+#search-button {
     padding: 10px 20px;
     margin-left: 10px;
+    background-color: #101010;
+    color: white;
     border: none;
-    background-color: #000;
-    color: #fff;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #333;
 }
 
 /* Categorias */
 .categories {
-    padding: 50px 20px;
+    padding: 40px 20px;
+    background-color: #f4f4f4;
     text-align: center;
 }
 
 .category-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
 .category-item {
-    width: 200px;
-    height: 100px;
-    background: #000;
-    color: #fff;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 20px;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
     cursor: pointer;
-    transition: transform 0.3s;
-    font-family: 'Playfair Display', serif;
 }
 
 .category-item:hover {
     transform: scale(1.05);
 }
 
+.category-item h3 {
+    font-family: 'Playfair Display', serif;
+    color: #101010;
+}
+
 /* Receitas */
 #recipe-section {
     padding: 40px 20px;
+    background-color: #ffffff;
     text-align: center;
-    background: #fff;
 }
 
 #drink-list {
@@ -122,18 +120,22 @@ body {
 
 #drink-list li {
     padding: 10px;
-    background: #ececec;
     margin: 10px auto;
     cursor: pointer;
-    width: 50%;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
     border-radius: 5px;
     transition: background 0.3s;
 }
 
 #drink-list li:hover {
-    background: #d4d4d4;
+    background-color: #e0e0e0;
 }
 
-#recipe-details {
-    margin-top: 20px;
+/* Rodapé */
+footer {
+    background-color: #101010;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
