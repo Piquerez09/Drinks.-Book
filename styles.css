@@ -1,4 +1,4 @@
-/* Reset e Configurações Básicas */
+/* Reset e Estilos Básicos */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -8,13 +8,11 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Modo Escuro */
 .dark-mode {
     background-color: #333;
     color: #f5f5f5;
 }
 
-/* Cabeçalho */
 header {
     background-color: #000;
     color: #fff;
@@ -22,14 +20,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
 }
 
 header nav a {
@@ -38,27 +28,30 @@ header nav a {
     margin: 0 10px;
 }
 
-/* Botão de Alternância de Tema */
 .theme-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
 }
 
 /* Modal de Verificação de Idade */
 .age-verification-modal {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
 .age-verification-content {
@@ -69,34 +62,8 @@ header nav a {
 }
 
 .age-verification-buttons button {
-    margin: 5px;
+    margin: 10px;
     padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-}
-
-/* Categorias */
-.category {
-    padding: 20px;
-}
-
-.category h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.category ul {
-    list-style: none;
-    padding: 0;
-}
-
-.category li {
-    margin: 5px 0;
-}
-
-/* Rodapé */
-footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
 }
