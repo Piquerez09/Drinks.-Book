@@ -25,7 +25,6 @@ document.querySelectorAll('.category-item').forEach(item => {
         const categoryTitle = item.querySelector('h3').innerText;
         const drinkList = drinks[category];
 
-        // Atualiza a seção
         const recipeSection = document.getElementById('recipe-section');
         const categoryTitleElement = document.getElementById('category-title');
         const drinkListElement = document.getElementById('drink-list');
