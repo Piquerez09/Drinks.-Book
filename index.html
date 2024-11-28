@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Cabeçalho -->
-    <header>
+    <header class="header-italian">
         <div class="logo">Catálogo de Bebidas</div>
         <nav>
             <a href="#clássicos">Clássicos</a>
@@ -20,37 +20,41 @@
         </nav>
     </header>
 
-    <!-- Seção de Pesquisa -->
+    <!-- Seção de Introdução -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo ao Catálogo de Bebidas</h1>
+            <p>Descubra o mundo dos drinks com estilo e sofisticação.</p>
+        </div>
+    </section>
+
+    <!-- Pesquisa -->
     <section class="search-section">
-        <h1>Encontre a bebida perfeita</h1>
+        <h2>Encontre a bebida perfeita</h2>
         <input type="text" id="search-bar" placeholder="Digite o nome ou ingredientes...">
         <button id="search-button">Buscar</button>
     </section>
 
-    <!-- Seção de Categorias -->
+    <!-- Categorias -->
     <section class="categories">
         <h2>Categorias</h2>
         <div class="category-list">
             <div class="category-item" data-category="clássicos">
                 <h3>Clássicos</h3>
-                <p>Bebidas tradicionais que nunca saem de moda.</p>
             </div>
             <div class="category-item" data-category="tropicais">
                 <h3>Tropicais</h3>
-                <p>Sabor e frescor diretamente do paraíso.</p>
             </div>
             <div class="category-item" data-category="modernos">
                 <h3>Modernos</h3>
-                <p>Inovações e tendências no mundo das bebidas.</p>
             </div>
             <div class="category-item" data-category="italia">
                 <h3>Italia Drinks</h3>
-                <p>Os melhores sabores da Itália em um copo.</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Receitas -->
+    <!-- Receitas -->
     <section id="recipe-section" class="hidden">
         <h2 id="category-title"></h2>
         <ul id="drink-list"></ul>
@@ -62,7 +66,7 @@
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Catálogo de Bebidas. Inspirado no estilo italiano. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Catálogo de Bebidas. Estilo e sofisticação inspirados na Itália.</p>
     </footer>
 </body>
 </html>
