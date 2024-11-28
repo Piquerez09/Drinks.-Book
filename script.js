@@ -1,21 +1,18 @@
-// Verificação de Idade
-document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("age-verification-modal");
-    const ageYes = document.getElementById("age-yes");
-    const ageNo = document.getElementById("age-no");
+// Função de Pesquisa
+document.getElementById('search-button').addEventListener('click', () => {
+    const query = document.getElementById('search-bar').value.toLowerCase();
+    if (!query) {
+        alert('Digite algo para pesquisar!');
+        return;
+    }
+    alert(`Você pesquisou por: ${query}`);
+});
 
-    // Função para continuar no site
-    ageYes.addEventListener("click", () => {
-        modal.style.display = "none"; // Oculta o modal
-        document.body.style.overflow = "auto"; // Libera o scroll
+// Navegação por Categorias
+document.querySelectorAll('.category-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const category = item.dataset.category;
+        alert(`Você selecionou a categoria: ${category}`);
+        // Aqui você pode redirecionar ou carregar receitas específicas
     });
-
-    // Função para redirecionar caso o usuário não tenha 18 anos
-    ageNo.addEventListener("click", () => {
-        window.location.href = "https://www.disney.com"; // Link alternativo
-    });
-
-    // Mostra o modal e desativa o scroll inicial
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
 });

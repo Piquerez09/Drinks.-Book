@@ -4,21 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Bebidas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- Modal de Verificação de Idade -->
-    <div id="age-verification-modal" class="age-verification-modal">
-        <div class="age-verification-content">
-            <h2>Você tem 18 anos ou mais?</h2>
-            <div class="age-verification-buttons">
-                <button id="age-yes">Sim</button>
-                <button id="age-no">Não</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Cabeçalho -->
     <header>
         <div class="logo">Catálogo de Bebidas</div>
@@ -26,24 +16,44 @@
             <a href="#clássicos">Clássicos</a>
             <a href="#tropicais">Tropicais</a>
             <a href="#modernos">Modernos</a>
-            <a href="#italia">Bebidas da Itália</a>
+            <a href="#italia">Italia Drinks</a>
             <a href="#shop">Loja</a>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main>
-        <div id="content">
-            <h1>Bem-vindo ao Catálogo de Bebidas</h1>
-            <p>Explore as melhores bebidas para impressionar em qualquer ocasião!</p>
+    <!-- Seção de Pesquisa -->
+    <section class="search-section">
+        <h1>Encontre a bebida perfeita</h1>
+        <input type="text" id="search-bar" placeholder="Digite o nome ou ingredientes...">
+        <button id="search-button">Buscar</button>
+    </section>
+
+    <!-- Seção de Categorias -->
+    <section id="categories" class="categories">
+        <h2>Categorias</h2>
+        <div class="category-list">
+            <div class="category-item" data-category="clássicos">
+                <h3>Clássicos</h3>
+                <p>Bebidas tradicionais que nunca saem de moda.</p>
+            </div>
+            <div class="category-item" data-category="tropicais">
+                <h3>Tropicais</h3>
+                <p>Sabor e frescor diretamente do paraíso.</p>
+            </div>
+            <div class="category-item" data-category="modernos">
+                <h3>Modernos</h3>
+                <p>Inovações e tendências no mundo das bebidas.</p>
+            </div>
+            <div class="category-item" data-category="italia">
+                <h3>Italia Drinks</h3>
+                <p>Os melhores sabores da Itália em um copo.</p>
+            </div>
         </div>
-    </main>
+    </section>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Catálogo de Bebidas. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Catálogo de Bebidas. Inspirado no estilo italiano. Todos os direitos reservados.</p>
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
