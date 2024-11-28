@@ -4,27 +4,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const ageYes = document.getElementById("age-yes");
     const ageNo = document.getElementById("age-no");
 
+    // Função para continuar no site
     ageYes.addEventListener("click", () => {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
+        modal.style.display = "none"; // Oculta o modal
+        document.body.style.overflow = "auto"; // Libera o scroll
     });
 
+    // Função para redirecionar caso o usuário não tenha 18 anos
     ageNo.addEventListener("click", () => {
-        alert("Você precisa ser maior de 18 anos para acessar este site.");
-        window.location.href = "https://www.google.com";
+        window.location.href = "https://www.google.com"; // Alterar para o link desejado
     });
 
-    // Mostra o modal e bloqueia o scroll inicial
+    // Mostra o modal e desativa o scroll inicial
     modal.style.display = "flex";
     document.body.style.overflow = "hidden";
-});
-
-// Alternância de Tema (Claro/Escuro)
-const themeToggle = document.getElementById("theme-toggle");
-
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    themeToggle.textContent = document.body.classList.contains("dark-mode")
-        ? "Modo Claro"
-        : "Modo Escuro";
 });

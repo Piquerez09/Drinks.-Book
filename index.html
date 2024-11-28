@@ -31,27 +31,45 @@
         </nav>
     </header>
 
-    <!-- Botão de alternância entre modo claro e escuro -->
-    <button id="theme-toggle" class="theme-toggle">Modo Escuro</button>
+    <!-- Formulário de Cadastro -->
+    <div id="signup-section">
+        <button class="shop-btn" onclick="openSignupForm()">Cadastrar-se para Comprar</button>
+        <div id="signup-form-container"></div>
+    </div>
 
-    <!-- Seção de Categorias -->
+    <!-- Pesquisa -->
+    <div id="search-section">
+        <input type="text" id="search" placeholder="Pesquisar bebidas...">
+        <button id="search-btn" onclick="searchRecipes()">Pesquisar</button>
+    </div>
+
+    <!-- Categorias -->
     <div id="categories">
-        <section id="clássicos">
+        <div id="clássicos" class="category">
             <h2>Cóctéis Clássicos</h2>
-            <p>Lista de bebidas clássicas aqui.</p>
-        </section>
-        <section id="tropicais">
+            <ul id="clássicos-list"></ul>
+        </div>
+        <div id="tropicais" class="category">
             <h2>Cóctéis Tropicais</h2>
-            <p>Lista de bebidas tropicais aqui.</p>
-        </section>
-        <section id="modernos">
+            <ul id="tropicais-list"></ul>
+        </div>
+        <div id="modernos" class="category">
             <h2>Cóctéis Modernos</h2>
-            <p>Lista de bebidas modernas aqui.</p>
-        </section>
-        <section id="italia">
+            <ul id="modernos-list"></ul>
+        </div>
+        <div id="italia" class="category">
             <h2>Bebidas da Itália</h2>
-            <p>Lista de bebidas italianas aqui.</p>
-        </section>
+            <ul id="italia-list"></ul>
+        </div>
+    </div>
+
+    <!-- Inteligência Artificial -->
+    <div id="ai-container">
+        <div id="ai-window">
+            <div id="ai-messages"></div>
+            <input type="text" id="ai-input" placeholder="Digite o que você deseja..." onkeyup="checkInput(event)">
+            <button onclick="createRecipe()">Criar Receita</button>
+        </div>
     </div>
 
     <!-- Rodapé -->
