@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para redirecionar caso o usuário não tenha 18 anos
     ageNo.addEventListener("click", () => {
-        window.location.href = "https://www.google.com"; // Alterar para o link desejado
+        window.location.href = "https://www.disney.com"; // Link alternativo
     });
 
     // Mostra o modal e desativa o scroll inicial

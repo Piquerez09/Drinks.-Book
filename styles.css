@@ -1,3 +1,4 @@
+/* Estilos gerais */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -37,6 +38,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Modal de verificação de idade */
 #age-verification-modal {
     position: fixed;
     top: 0;
@@ -68,4 +70,17 @@ nav a:hover {
 
 .age-verification-buttons button:hover {
     background-color: #ccc;
+}
+
+/* Conteúdo principal */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #2a2a2a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }
