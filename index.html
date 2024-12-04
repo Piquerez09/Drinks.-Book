@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,77 +11,63 @@
     <!-- Cabeçalho -->
     <header>
         <div class="logo">
-            <h1>Catálogo de Bebidas</h1>
+            <h1>Italia Drinks</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="#categorias">Categorias</a></li>
                 <li><a href="#loja">Loja</a></li>
-                <li><a href="#ia">Criar Receita</a></li>
+                <li><a href="#ia">IA de Receitas</a></li>
             </ul>
         </nav>
-        <div class="user-avatar">
-            <div id="userAvatar">Sem Usuário</div>
-        </div>
+        <div id="user-avatar" class="user-avatar">?</div>
     </header>
 
-    <!-- Cadastro/Login -->
+    <!-- Seção de Cadastro/Login -->
     <section id="cadastro">
-        <h2>Cadastro e Login</h2>
-        <div class="form-container">
-            <form id="formCadastro">
-                <input type="email" id="email" name="email" placeholder="E-mail" required>
-                <input type="password" id="senha" name="senha" placeholder="Senha" required>
-                <button type="submit">Cadastrar</button>
-            </form>
-            <form id="formLogin">
-                <input type="email" id="emailLogin" name="email" placeholder="E-mail" required>
-                <input type="password" id="senhaLogin" name="senha" placeholder="Senha" required>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Categorias e Receitas -->
-    <section id="categorias">
-        <h2>Categorias de Bebidas</h2>
-        <div class="categorias-list">
-            <button onclick="showBebidas('clássicas')">Clássicas</button>
-            <button onclick="showBebidas('tropicais')">Tropicais</button>
-            <button onclick="showBebidas('modernas')">Modernas</button>
-            <button onclick="showBebidas('italianas')">Italia Drinks</button>
-        </div>
-        <div id="bebidasList"></div>
-        <div id="receitaDetalhada" style="display: none;">
-            <button id="voltarCategorias">Voltar</button>
-            <div id="receita"></div>
-        </div>
-    </section>
-
-    <!-- Criador de Receita -->
-    <section id="ia">
-        <h2>Criar Nova Receita</h2>
-        <form id="formIA">
-            <input type="text" id="nomeBebida" placeholder="Nome da bebida" required>
-            <textarea id="ingredientesDesejados" placeholder="Ingredientes desejados"></textarea>
-            <textarea id="ingredientesProibidos" placeholder="Ingredientes proibidos"></textarea>
-            <input type="text" id="ocasiao" placeholder="Ocasião">
-            <button type="submit">Criar Receita</button>
+        <h2>Faça seu Cadastro</h2>
+        <form id="cadastroForm">
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <button type="button" onclick="realizarCadastro()">Cadastrar</button>
         </form>
-        <div id="novaReceita"></div>
+    </section>
+
+    <!-- Categorias -->
+    <section id="categorias">
+        <h2>Explore por Categorias</h2>
+        <div class="categorias-list">
+            <button onclick="mostrarBebidas('Clássicos')">Clássicos</button>
+            <button onclick="mostrarBebidas('Tropicais')">Tropicais</button>
+            <button onclick="mostrarBebidas('Modernos')">Modernos</button>
+            <button onclick="mostrarBebidas('Italia Drinks')">Italia Drinks</button>
+        </div>
+        <div id="bebidas-list"></div>
+    </section>
+
+    <!-- IA de Receitas -->
+    <section id="ia">
+        <h2>Crie sua Própria Receita</h2>
+        <form id="iaForm">
+            <textarea id="preferencias" placeholder="Quais ingredientes você deseja na receita?" required></textarea>
+            <textarea id="restricoes" placeholder="Quais ingredientes você não deseja?" required></textarea>
+            <input type="text" id="ocasion" placeholder="Qual é a ocasião?" required>
+            <button type="button" onclick="criarReceita()">Criar Receita</button>
+        </form>
+        <div id="receitaDetalhada"></div>
     </section>
 
     <!-- Loja -->
     <section id="loja">
-        <h2>Loja de Bebidas</h2>
-        <div class="produtos">
-            <!-- Produtos podem ser adicionados aqui -->
+        <h2>Nossa Loja</h2>
+        <div class="produtos" id="produtos">
+            <!-- Produtos serão adicionados dinamicamente -->
         </div>
     </section>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Catálogo de Bebidas | Todos os direitos reservados</p>
+        <p>&copy; 2024 Italia Drinks - Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
