@@ -1,71 +1,42 @@
-// Sistema de cadastro
+// Login/Cadastro funcionalidade
 document.getElementById('formCadastro').addEventListener('submit', function (e) {
     e.preventDefault();
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
-
-    if (email && senha) {
-        alert(`Cadastro realizado com sucesso! Bem-vindo, ${email}`);
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    if (!usuarios.find(u => u.email === email)) {
+        usuarios.push({ email, senha });
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        alert('Cadastro realizado com sucesso!');
     } else {
-        alert('Por favor, preencha todos os campos.');
+        alert('Usuário já existe!');
     }
 });
 
-// Login com Google
-function onGoogleLogin(response) {
-    alert(`Login realizado com sucesso! Bem-vindo, ${response.credential}`);
-}
-
-// Login com Apple (simulado)
-function loginApple() {
-    alert('Login com Apple realizado com sucesso!');
-}
-
-// Exibir receitas
-function mostrarReceita(bebida) {
-    let receita;
-    switch (bebida) {
-        case 'margarita':
-            receita = 'Receita de Margarita: Tequila, Triple Sec, Suco de Limão.';
-            break;
-        case 'mojito':
-            receita = 'Receita de Mojito: Rum, Hortelã, Açúcar, Limão.';
-            break;
-        case 'pinaColada':
-            receita = 'Receita de Piña Colada: Rum, Abacaxi, Creme de Coco.';
-            break;
-        case 'caipirinha':
-            receita = 'Receita de Caipirinha: Cachaça, Limão, Açúcar.';
-            break;
-        case 'dryMartini':
-            receita = 'Receita de Dry Martini: Gin, Vermute Seco.';
-            break;
-        case 'negroni':
-            receita = 'Receita de Negroni: Gin, Vermute Rosso, Campari.';
-            break;
-        default:
-            receita = 'Receita não encontrada.';
-    }
-    document.getElementById('receitaText').textContent = receita;
-    document.getElementById('receita').style.display = 'block';
-}
-
-function voltarCategorias() {
-    document.getElementById('receita').style.display = 'none';
-}
-
-// IA para criar nova receita
-document.getElementById('iaForm').addEventListener('submit', function (e) {
+document.getElementById('formLogin').addEventListener('submit', function (e) {
     e.preventDefault();
-    const ingredientes = document.getElementById('ingredientes').value;
-    const naoUsar = document.getElementById('naoUsar').value;
-    const ocasiao = document.getElementById('ocasiao').value;
+    const email = document.getElementById('emailLogin').value;
+    const senha = document.getElementById('senhaLogin').value;
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const usuario = usuarios.find(u => u.email === email && u.senha === senha);
+    if (usuario) {
+        alert(`Bem-vindo, ${email}`);
+    } else {
+        alert('Usuário ou senha inválidos.');
+    }
+});
 
-    const novaReceita = `
-        Baseado na sua escolha, aqui está a sua nova receita:
-        Ingredientes: ${ingredientes || 'Não especificados'},
-        Evitar: ${naoUsar || 'Nada especificado'},
-        Ocasião: ${ocasiao || 'Qualquer situação'}.
+// IA Criadora de Receita
+document.getElementById('formIA').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const nomeBebida = document.getElementById('nomeBebida').value;
+    const ingredientes = document.getElementById('ingredientesDesejados').value;
+    const proibidos = document.getElementById('ingredientesProibidos').value;
+    const ocasiao = document.getElementById('ocasiao').value;
+    const receita = `
+        Receita de ${nomeBebida}:
+        Ingredientes: ${ingredientes || 'Qualquer ingrediente exceto: ' + proibidos}
+        Ocasião: ${ocasiao || 'Nenhuma ocasião específica'}
     `;
-    document.getElementById('novaReceita').textContent = novaReceita;
+    document.getElementById('novaReceita').textContent = receita;
 });

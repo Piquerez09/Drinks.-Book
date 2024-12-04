@@ -1,66 +1,99 @@
-/* Estilos gerais */
+/* Estilo Luxuoso Inspirado em Prada e Vivara */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
     margin: 0;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
-/* Cabeçalho */
 header {
     background-color: #000;
-    color: white;
-    padding: 20px;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
 }
 
-/* Cadastro */
-#cadastro form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+header .logo h1 {
+    font-size: 2rem;
+    margin: 0;
 }
 
-#cadastro form input, button {
-    width: 80%;
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d4af37;
+}
+
+section {
+    padding: 50px 10%;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+#cadastro input,
+#cadastro button {
+    display: block;
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.social-login {
-    margin-top: 10px;
-    text-align: center;
-}
-
-#googleLogin, button {
-    margin: 10px 0;
-    padding: 10px;
-    color: white;
+#cadastro button {
     background-color: #d4af37;
-    border: none;
-    border-radius: 5px;
+    color: #fff;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #b8a32e;
+#cadastro button:hover {
+    background-color: #b8952c;
 }
 
-/* Categorias e receitas */
-#categorias ul {
-    list-style: none;
-    padding: 0;
+/* Categorias */
+.categorias-list button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s;
 }
 
-#categorias ul li a {
-    color: #000;
-    text-decoration: none;
-    font-size: 18px;
+.categorias-list button:hover {
+    background-color: #d4af37;
 }
 
-#categorias ul li a:hover {
-    color: #d4af37;
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 0.8rem;
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Bebidas</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -17,77 +17,70 @@
             <ul>
                 <li><a href="#categorias">Categorias</a></li>
                 <li><a href="#loja">Loja</a></li>
-                <li><a href="#cadastro">Cadastro</a></li>
+                <li><a href="#cadastro">Cadastro/Login</a></li>
                 <li><a href="#ia">Criar Receita</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Seção de Cadastro -->
+    <!-- Cadastro/Login -->
     <section id="cadastro">
         <h2>Cadastro e Login</h2>
-        <form id="formCadastro">
-            <input type="email" id="email" name="email" placeholder="E-mail" required>
-            <input type="password" id="senha" name="senha" placeholder="Senha" required>
-            <button type="submit">Cadastrar</button>
-        </form>
-        <div class="social-login">
-            <h3>Ou entre com:</h3>
-            <div id="googleLogin"></div>
-            <button onclick="loginApple()">Login com Apple</button>
+        <div class="form-container">
+            <form id="formCadastro">
+                <input type="email" id="email" name="email" placeholder="E-mail" required>
+                <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <form id="formLogin">
+                <input type="email" id="emailLogin" name="email" placeholder="E-mail" required>
+                <input type="password" id="senhaLogin" name="senha" placeholder="Senha" required>
+                <button type="submit">Login</button>
+            </form>
+            <div class="social-login">
+                <h3>Ou entre com:</h3>
+                <button onclick="loginApple()">Login com Apple</button>
+            </div>
         </div>
+        <div id="loginStatus"></div>
     </section>
 
-    <!-- Seção de Categorias -->
+    <!-- Categorias e Receitas -->
     <section id="categorias">
         <h2>Categorias de Bebidas</h2>
-        <div class="categoria">
-            <h3>Clássicos</h3>
-            <ul>
-                <li><a href="#" onclick="mostrarReceita('margarita')">Margarita</a></li>
-                <li><a href="#" onclick="mostrarReceita('mojito')">Mojito</a></li>
-            </ul>
+        <div class="categorias-list">
+            <button onclick="showBebidas('clássicas')">Clássicas</button>
+            <button onclick="showBebidas('tropicais')">Tropicais</button>
+            <button onclick="showBebidas('modernas')">Modernas</button>
+            <button onclick="showBebidas('italianas')">Italia Drinks</button>
         </div>
-        <div class="categoria">
-            <h3>Tropicais</h3>
-            <ul>
-                <li><a href="#" onclick="mostrarReceita('pinaColada')">Piña Colada</a></li>
-                <li><a href="#" onclick="mostrarReceita('caipirinha')">Caipirinha</a></li>
-            </ul>
-        </div>
-        <div class="categoria">
-            <h3>Modernos</h3>
-            <ul>
-                <li><a href="#" onclick="mostrarReceita('dryMartini')">Dry Martini</a></li>
-                <li><a href="#" onclick="mostrarReceita('negroni')">Negroni</a></li>
-            </ul>
-        </div>
+        <div id="bebidasList"></div>
     </section>
 
-    <!-- Seção de Receitas -->
-    <section id="receita" style="display: none;">
-        <h2>Receita</h2>
-        <p id="receitaText"></p>
-        <button onclick="voltarCategorias()">Voltar</button>
-    </section>
-
-    <!-- Seção IA -->
+    <!-- Criador de Receita -->
     <section id="ia">
         <h2>Criar Nova Receita</h2>
-        <form id="iaForm">
-            <input type="text" id="ingredientes" placeholder="Ingredientes (separados por vírgula)">
-            <input type="text" id="naoUsar" placeholder="Ingredientes a evitar">
+        <form id="formIA">
+            <input type="text" id="nomeBebida" placeholder="Nome da bebida" required>
+            <textarea id="ingredientesDesejados" placeholder="Ingredientes desejados"></textarea>
+            <textarea id="ingredientesProibidos" placeholder="Ingredientes proibidos"></textarea>
             <input type="text" id="ocasiao" placeholder="Ocasião">
             <button type="submit">Criar Receita</button>
         </form>
         <div id="novaReceita"></div>
     </section>
 
+    <!-- Loja -->
+    <section id="loja">
+        <h2>Loja de Bebidas</h2>
+        <div class="produtos">
+            <!-- Produtos podem ser adicionados aqui -->
+        </div>
+    </section>
+
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 Catálogo de Bebidas | Todos os direitos reservados</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
