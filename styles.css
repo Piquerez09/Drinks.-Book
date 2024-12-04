@@ -1,8 +1,8 @@
-/* Configuração geral */
+/* Estilo geral */
 body {
-    font-family: 'Playfair Display', serif; /* Elegante, inspirado no luxo */
-    background-color: #000; /* Fundo preto para estilo sofisticado */
-    color: #fff; /* Texto branco para contraste */
+    font-family: "Libre Baskerville", serif; /* Elegante e clássico */
+    background-color: #000; /* Fundo preto */
+    color: #f0e68c; /* Dourado suave */
     margin: 0;
     padding: 0;
 }
@@ -12,63 +12,60 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: #1a1a1a;
-    border-bottom: 2px solid #fff;
+    padding: 10px 20px;
+    background-color: #111; /* Preto levemente diferente */
+    border-bottom: 2px solid #f0e68c;
 }
 
 header .logo h1 {
-    font-size: 2.5rem;
-    color: #d4af37; /* Ouro para sensação de luxo */
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 1.8rem;
+    color: #f0e68c;
+    font-weight: bold;
 }
 
 header nav ul {
-    list-style: none;
     display: flex;
-    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 header nav ul li {
-    font-size: 1.2rem;
+    margin: 0 15px;
 }
 
 header nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #f0e68c;
+    font-size: 1rem;
     transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #d4af37;
+    color: #fff;
 }
 
 #user-avatar {
-    width: 50px;
-    height: 50px;
     background-color: #444;
+    color: #f0e68c;
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
-    border: 2px solid #d4af37;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-/* Seção de Cadastro */
+/* Cadastro/Login */
 #cadastro {
-    padding: 50px;
-    background-color: #1a1a1a;
-    border-bottom: 2px solid #fff;
     text-align: center;
+    padding: 30px 20px;
 }
 
 #cadastro h2 {
-    font-size: 2rem;
-    color: #d4af37;
+    font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
@@ -76,21 +73,22 @@ header nav ul li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
 }
 
-#cadastro form input {
-    width: 300px;
+#cadastro input {
+    width: 80%;
+    max-width: 400px;
     padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #f0e68c;
+    background-color: #111;
+    color: #f0e68c;
     font-size: 1rem;
-    border: 1px solid #fff;
     border-radius: 5px;
-    background-color: #000;
-    color: #fff;
 }
 
-#cadastro form button {
-    background-color: #d4af37;
+#cadastro button {
+    background-color: #f0e68c;
     color: #000;
     border: none;
     padding: 10px 20px;
@@ -100,34 +98,33 @@ header nav ul li a:hover {
     transition: background-color 0.3s;
 }
 
-#cadastro form button:hover {
-    background-color: #b8860b;
+#cadastro button:hover {
+    background-color: #fff;
 }
 
 /* Categorias */
 #categorias {
-    padding: 50px;
-    text-align: center;
+    padding: 30px 20px;
 }
 
 #categorias h2 {
-    font-size: 2rem;
-    color: #d4af37;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .categorias-list {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .categorias-list button {
-    background-color: #d4af37;
+    background-color: #f0e68c;
     color: #000;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -135,109 +132,118 @@ header nav ul li a:hover {
 }
 
 .categorias-list button:hover {
-    background-color: #b8860b;
+    background-color: #fff;
 }
 
 #bebidas-list {
-    margin-top: 20px;
-    text-align: left;
-    display: inline-block;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-/* IA de Receitas */
+/* IA de receitas */
 #ia {
-    padding: 50px;
-    background-color: #1a1a1a;
-    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
 }
 
 #ia h2 {
-    font-size: 2rem;
-    color: #d4af37;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-#iaForm {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#iaForm textarea,
-#iaForm input {
-    width: 100%;
-    max-width: 500px;
+#ia form textarea,
+#ia form input {
+    width: 80%;
+    max-width: 400px;
     padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #f0e68c;
+    background-color: #111;
+    color: #f0e68c;
     font-size: 1rem;
-    border: 1px solid #fff;
     border-radius: 5px;
-    background-color: #000;
-    color: #fff;
 }
 
-#iaForm button {
-    background-color: #d4af37;
+#ia button {
+    background-color: #f0e68c;
     color: #000;
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#receitaDetalhada {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 5px;
-    color: #d4af37;
+#ia button:hover {
+    background-color: #fff;
 }
 
 /* Loja */
 #loja {
-    padding: 50px;
+    padding: 30px 20px;
     text-align: center;
 }
 
 #loja h2 {
-    font-size: 2rem;
-    color: #d4af37;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 .produtos {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
 }
 
 .produto {
-    background-color: #1a1a1a;
-    border: 2px solid #d4af37;
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px;
+    background-color: #111;
+    border: 2px solid #f0e68c;
+    border-radius: 5px;
     width: 200px;
-    color: #fff;
+    text-align: center;
+    padding: 10px;
 }
 
 .produto img {
     max-width: 100%;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .produto h3 {
-    margin: 15px 0;
-    color: #d4af37;
+    font-size: 1rem;
+    color: #f0e68c;
+}
+
+.produto p {
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.produto button {
+    background-color: #f0e68c;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.produto button:hover {
+    background-color: #fff;
 }
 
 /* Rodapé */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #1a1a1a;
-    border-top: 2px solid #fff;
-    color: #d4af37;
+    background-color: #111;
+    color: #f0e68c;
+    padding: 10px;
+    margin-top: 30px;
+    border-top: 2px solid #f0e68c;
 }
