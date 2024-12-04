@@ -1,39 +1,34 @@
-/* Estilo Luxuoso Inspirado em Prada e Vivara */
+/* Estilo Geral */
 body {
     margin: 0;
     font-family: 'Playfair Display', serif;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #fff;
+    background-color: #000;
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
     background-color: #000;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    border-bottom: 1px solid #d4af37;
 }
 
 header .logo h1 {
+    color: #d4af37;
     font-size: 2rem;
-    margin: 0;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
-    margin: 10px 0 0;
-}
-
-nav ul li {
-    margin: 0 15px;
+    gap: 20px;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
     transition: color 0.3s;
 }
 
@@ -41,59 +36,40 @@ nav ul li a:hover {
     color: #d4af37;
 }
 
-section {
-    padding: 50px 10%;
-}
-
-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #000;
-    text-transform: uppercase;
-}
-
-#cadastro input,
-#cadastro button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#cadastro button {
-    background-color: #d4af37;
+/* Avatar do Usuário */
+.user-avatar {
     color: #fff;
+    background-color: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
     cursor: pointer;
-}
-
-#cadastro button:hover {
-    background-color: #b8952c;
 }
 
 /* Categorias */
 .categorias-list button {
-    background-color: #000;
+    background-color: #333;
     color: #fff;
-    padding: 10px 20px;
-    border: none;
+    border: 1px solid #d4af37;
+    padding: 10px 15px;
     margin: 5px;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1rem;
-    transition: background 0.3s;
 }
 
 .categorias-list button:hover {
     background-color: #d4af37;
+    color: #000;
 }
 
+/* Rodapé */
 footer {
-    background-color: #000;
-    color: #fff;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
-    font-size: 0.8rem;
+    background-color: #111;
+    color: #d4af37;
 }

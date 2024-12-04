@@ -1,42 +1,53 @@
-// Login/Cadastro funcionalidade
+// Gerenciar Avatar do Usuário
+const userAvatar = document.getElementById("userAvatar");
+
+// Cadastro/Login
 document.getElementById('formCadastro').addEventListener('submit', function (e) {
     e.preventDefault();
     const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    if (!usuarios.find(u => u.email === email)) {
-        usuarios.push({ email, senha });
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));
-        alert('Cadastro realizado com sucesso!');
-    } else {
-        alert('Usuário já existe!');
-    }
+    localStorage.setItem('usuario', email);
+    userAvatar.textContent = getInitials(email);
+    alert('Cadastro realizado!');
 });
 
 document.getElementById('formLogin').addEventListener('submit', function (e) {
     e.preventDefault();
     const email = document.getElementById('emailLogin').value;
-    const senha = document.getElementById('senhaLogin').value;
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const usuario = usuarios.find(u => u.email === email && u.senha === senha);
-    if (usuario) {
-        alert(`Bem-vindo, ${email}`);
+    if (localStorage.getItem('usuario') === email) {
+        userAvatar.textContent = getInitials(email);
+        alert('Bem-vindo de volta!');
     } else {
-        alert('Usuário ou senha inválidos.');
+        alert('Usuário não encontrado.');
     }
 });
 
-// IA Criadora de Receita
-document.getElementById('formIA').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const nomeBebida = document.getElementById('nomeBebida').value;
-    const ingredientes = document.getElementById('ingredientesDesejados').value;
-    const proibidos = document.getElementById('ingredientesProibidos').value;
-    const ocasiao = document.getElementById('ocasiao').value;
-    const receita = `
-        Receita de ${nomeBebida}:
-        Ingredientes: ${ingredientes || 'Qualquer ingrediente exceto: ' + proibidos}
-        Ocasião: ${ocasiao || 'Nenhuma ocasião específica'}
-    `;
-    document.getElementById('novaReceita').textContent = receita;
+// Retorna as iniciais de um e-mail
+function getInitials(email) {
+    const parts = email.split('@')[0].split('.');
+    return parts.map(p => p[0].toUpperCase()).join('');
+}
+
+// Função para exibir e esconder receitas
+const categorias = {
+    clássicas: ["Margarita", "Manhattan"],
+    tropicais: ["Piña Colada", "Mai Tai"],
+    modernas: ["Espresso Martini", "Negroni Sbagliato"],
+    italianas: ["Aperol Spritz", "Limoncello"]
+};
+
+function showBebidas(categoria) {
+    const bebidas = categorias[categoria];
+    const bebidasList = document.getElementById('bebidasList');
+    bebidasList.innerHTML = bebidas.map(nome => `<button onclick="mostrarReceita('${nome}')">${nome}</button>`).join('');
+}
+
+function mostrarReceita(nome) {
+    document.getElementById('bebidasList').style.display = 'none';
+    document.getElementById('receitaDetalhada').style.display = 'block';
+    document.getElementById('receita').textContent = `Receita de ${nome}: ... (detalhes da receita aqui).`;
+}
+
+document.getElementById('voltarCategorias').addEventListener('click', function () {
+    document.getElementById('bebidasList').style.display = 'block';
+    document.getElementById('receitaDetalhada').style.display = 'none';
 });
