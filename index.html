@@ -1,90 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Bebidas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <!-- Cabeçalho -->
     <header>
-        Catálogo de Bebidas
+        <div class="logo">
+            <h1>Catálogo de Bebidas</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#categorias">Categorias</a></li>
+                <li><a href="#loja">Loja</a></li>
+                <li><a href="#cadastro">Cadastro</a></li>
+                <li><a href="#ia">Criar Receita</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <a href="#clássicos">Clássicos</a>
-        <a href="#tropicais">Tropicais</a>
-        <a href="#modernos">Modernos</a>
-        <a href="#italia">Italia Drinks</a>
-        <a href="#loja">Loja</a>
-    </nav>
 
-    <!-- Seção de Pesquisa -->
-    <section class="search-section">
-        <h1>Encontre a bebida perfeita</h1>
-        <input type="text" id="search-bar" placeholder="Digite o nome ou ingredientes...">
-        <button id="search-button">Buscar</button>
+    <!-- Seção de Cadastro -->
+    <section id="cadastro">
+        <h2>Cadastro e Login</h2>
+        <form id="formCadastro">
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div class="social-login">
+            <h3>Ou entre com:</h3>
+            <div id="googleLogin"></div>
+            <button onclick="loginApple()">Login com Apple</button>
+        </div>
     </section>
 
-    <!-- Categorias -->
-    <section class="categories">
-        <h2>Categorias</h2>
-        <div class="category-list">
-            <div class="category-item" data-category="clássicos">
-                <h3>Clássicos</h3>
-            </div>
-            <div class="category-item" data-category="tropicais">
-                <h3>Tropicais</h3>
-            </div>
-            <div class="category-item" data-category="modernos">
-                <h3>Modernos</h3>
-            </div>
-            <div class="category-item" data-category="italia">
-                <h3>Italia Drinks</h3>
-            </div>
+    <!-- Seção de Categorias -->
+    <section id="categorias">
+        <h2>Categorias de Bebidas</h2>
+        <div class="categoria">
+            <h3>Clássicos</h3>
+            <ul>
+                <li><a href="#" onclick="mostrarReceita('margarita')">Margarita</a></li>
+                <li><a href="#" onclick="mostrarReceita('mojito')">Mojito</a></li>
+            </ul>
+        </div>
+        <div class="categoria">
+            <h3>Tropicais</h3>
+            <ul>
+                <li><a href="#" onclick="mostrarReceita('pinaColada')">Piña Colada</a></li>
+                <li><a href="#" onclick="mostrarReceita('caipirinha')">Caipirinha</a></li>
+            </ul>
+        </div>
+        <div class="categoria">
+            <h3>Modernos</h3>
+            <ul>
+                <li><a href="#" onclick="mostrarReceita('dryMartini')">Dry Martini</a></li>
+                <li><a href="#" onclick="mostrarReceita('negroni')">Negroni</a></li>
+            </ul>
         </div>
     </section>
 
     <!-- Seção de Receitas -->
-    <section id="recipe-section" class="hidden">
-        <h2 id="category-title"></h2>
-        <ul id="drink-list"></ul>
-        <div id="recipe-details" class="hidden">
-            <h3 id="drink-title"></h3>
-            <p id="drink-recipe"></p>
-        </div>
+    <section id="receita" style="display: none;">
+        <h2>Receita</h2>
+        <p id="receitaText"></p>
+        <button onclick="voltarCategorias()">Voltar</button>
     </section>
 
-    <!-- Seção de Loja -->
-    <section id="loja" class="shop-section">
-        <h2>Loja de Bebidas e Acessórios</h2>
-        <div class="shop-list">
-            <div class="shop-item">
-                <img src="images/johnnie-walker.jpg" alt="Johnnie Walker" class="product-image">
-                <h3>Johnnie Walker Black Label</h3>
-                <p>Whisky escocês premium - 700ml</p>
-                <button class="buy-button">Comprar - R$ 200,00</button>
-            </div>
-            <div class="shop-item">
-                <img src="images/prosecco.jpg" alt="Prosecco" class="product-image">
-                <h3>Prosecco Italiano</h3>
-                <p>Vinho espumante italiano - 750ml</p>
-                <button class="buy-button">Comprar - R$ 120,00</button>
-            </div>
-            <div class="shop-item">
-                <img src="images/set-bar.jpg" alt="Kit de Bar" class="product-image">
-                <h3>Kit Completo de Bar</h3>
-                <p>Ferramentas profissionais de bar - Inclui coqueteleira, medidor, etc.</p>
-                <button class="buy-button">Comprar - R$ 250,00</button>
-            </div>
-        </div>
+    <!-- Seção IA -->
+    <section id="ia">
+        <h2>Criar Nova Receita</h2>
+        <form id="iaForm">
+            <input type="text" id="ingredientes" placeholder="Ingredientes (separados por vírgula)">
+            <input type="text" id="naoUsar" placeholder="Ingredientes a evitar">
+            <input type="text" id="ocasiao" placeholder="Ocasião">
+            <button type="submit">Criar Receita</button>
+        </form>
+        <div id="novaReceita"></div>
     </section>
 
     <!-- Rodapé -->
     <footer>
-        &copy; 2024 Catálogo de Bebidas - Elegância em cada drink.
+        <p>&copy; 2024 Catálogo de Bebidas | Todos os direitos reservados</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,45 +1,71 @@
-const drinks = {
-    clássicos: [
-        { name: "Margarita", recipe: "Tequila, suco de limão, licor de laranja e gelo." },
-        { name: "Old Fashioned", recipe: "Uísque, açúcar, angostura e gelo." }
-    ],
-    tropicais: [
-        { name: "Piña Colada", recipe: "Rum, leite de coco, suco de abacaxi e gelo." },
-        { name: "Mai Tai", recipe: "Rum branco, rum escuro, suco de limão, xarope de amêndoa." }
-    ],
-    modernos: [
-        { name: "Espresso Martini", recipe: "Vodka, café espresso, licor de café e açúcar." },
-        { name: "Gin Basil Smash", recipe: "Gin, suco de limão, manjericão e açúcar." }
-    ],
-    italia: [
-        { name: "Aperol Spritz", recipe: "Aperol, prosecco, água com gás e laranja." },
-        { name: "Negroni", recipe: "Gin, vermute tinto e Campari." }
-    ]
-};
+// Sistema de cadastro
+document.getElementById('formCadastro').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
 
-// Exibe lista de bebidas ao clicar na categoria
-document.querySelectorAll('.category-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const category = item.dataset.category;
-        const drinkListElement = document.getElementById('drink-list');
-        const recipeDetails = document.getElementById('recipe-details');
+    if (email && senha) {
+        alert(`Cadastro realizado com sucesso! Bem-vindo, ${email}`);
+    } else {
+        alert('Por favor, preencha todos os campos.');
+    }
+});
 
-        document.getElementById('category-title').innerText = category.toUpperCase();
-        drinkListElement.innerHTML = '';
-        recipeDetails.classList.add('hidden');
+// Login com Google
+function onGoogleLogin(response) {
+    alert(`Login realizado com sucesso! Bem-vindo, ${response.credential}`);
+}
 
-        drinks[category].forEach(drink => {
-            const li = document.createElement('li');
-            li.innerText = drink.name;
-            li.addEventListener('click', () => {
-                document.getElementById('drink-title').innerText = drink.name;
-                document.getElementById('drink-recipe').innerText = drink.recipe;
-                recipeDetails.classList.remove('hidden');
-            });
-            drinkListElement.appendChild(li);
-        });
+// Login com Apple (simulado)
+function loginApple() {
+    alert('Login com Apple realizado com sucesso!');
+}
 
-        document.getElementById('recipe-section').classList.remove('hidden');
-        window.scrollTo({ top: document.getElementById('recipe-section').offsetTop, behavior: 'smooth' });
-    });
+// Exibir receitas
+function mostrarReceita(bebida) {
+    let receita;
+    switch (bebida) {
+        case 'margarita':
+            receita = 'Receita de Margarita: Tequila, Triple Sec, Suco de Limão.';
+            break;
+        case 'mojito':
+            receita = 'Receita de Mojito: Rum, Hortelã, Açúcar, Limão.';
+            break;
+        case 'pinaColada':
+            receita = 'Receita de Piña Colada: Rum, Abacaxi, Creme de Coco.';
+            break;
+        case 'caipirinha':
+            receita = 'Receita de Caipirinha: Cachaça, Limão, Açúcar.';
+            break;
+        case 'dryMartini':
+            receita = 'Receita de Dry Martini: Gin, Vermute Seco.';
+            break;
+        case 'negroni':
+            receita = 'Receita de Negroni: Gin, Vermute Rosso, Campari.';
+            break;
+        default:
+            receita = 'Receita não encontrada.';
+    }
+    document.getElementById('receitaText').textContent = receita;
+    document.getElementById('receita').style.display = 'block';
+}
+
+function voltarCategorias() {
+    document.getElementById('receita').style.display = 'none';
+}
+
+// IA para criar nova receita
+document.getElementById('iaForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const ingredientes = document.getElementById('ingredientes').value;
+    const naoUsar = document.getElementById('naoUsar').value;
+    const ocasiao = document.getElementById('ocasiao').value;
+
+    const novaReceita = `
+        Baseado na sua escolha, aqui está a sua nova receita:
+        Ingredientes: ${ingredientes || 'Não especificados'},
+        Evitar: ${naoUsar || 'Nada especificado'},
+        Ocasião: ${ocasiao || 'Qualquer situação'}.
+    `;
+    document.getElementById('novaReceita').textContent = novaReceita;
 });
