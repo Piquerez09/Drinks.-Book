@@ -1,10 +1,10 @@
-/* Estilo Global */
+/* Configuração geral */
 body {
+    font-family: 'Playfair Display', serif; /* Elegante, inspirado no luxo */
+    background-color: #000; /* Fundo preto para estilo sofisticado */
+    color: #fff; /* Texto branco para contraste */
     margin: 0;
-    font-family: 'Playfair Display', serif;
-    background-color: #000;
-    color: #fff;
-    overflow-x: hidden;
+    padding: 0;
 }
 
 /* Cabeçalho */
@@ -12,188 +12,232 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
-    background-color: #111;
-    border-bottom: 2px solid #d4af37;
+    padding: 20px 40px;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #fff;
 }
 
 header .logo h1 {
     font-size: 2.5rem;
-    font-weight: 700;
-    color: #d4af37;
+    color: #d4af37; /* Ouro para sensação de luxo */
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
-nav ul {
-    display: flex;
-    gap: 25px;
+header nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
-nav ul li a {
+header nav ul li {
+    font-size: 1.2rem;
+}
+
+header nav ul li a {
     text-decoration: none;
-    font-weight: 600;
     color: #fff;
-    padding: 5px 10px;
-    border-radius: 3px;
-    transition: all 0.3s ease;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #d4af37;
-    color: #000;
+header nav ul li a:hover {
+    color: #d4af37;
 }
 
-/* Avatar do Usuário */
-.user-avatar {
+#user-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #444;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: #333;
-    color: #d4af37;
-    font-weight: bold;
-    border-radius: 50%;
-    border: 2px solid #d4af37;
-    cursor: pointer;
-}
-
-/* Seções */
-section {
-    padding: 60px 10%;
-}
-
-section h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #d4af37;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/* Formulários */
-.form-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-form {
-    background-color: #222;
-    padding: 20px;
-    border: 1px solid #d4af37;
-    border-radius: 8px;
-    width: 300px;
-}
-
-form input, form textarea, form button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #d4af37;
-    border-radius: 5px;
-    background-color: #333;
+    font-size: 1.5rem;
     color: #fff;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-form button {
-    background-color: #d4af37;
-    color: #000;
-    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border: 2px solid #d4af37;
 }
 
-form button:hover {
-    background-color: #b99524;
+/* Seção de Cadastro */
+#cadastro {
+    padding: 50px;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #fff;
+    text-align: center;
 }
 
-/* Categorias */
-.categorias-list {
+#cadastro h2 {
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+#cadastro form {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
 }
 
-.categorias-list button {
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #d4af37;
-    padding: 15px 20px;
+#cadastro form input {
+    width: 300px;
+    padding: 10px;
     font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+}
+
+#cadastro form button {
+    background-color: #d4af37;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s;
+}
+
+#cadastro form button:hover {
+    background-color: #b8860b;
+}
+
+/* Categorias */
+#categorias {
+    padding: 50px;
+    text-align: center;
+}
+
+#categorias h2 {
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 30px;
+}
+
+.categorias-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.categorias-list button {
+    background-color: #d4af37;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .categorias-list button:hover {
-    background-color: #d4af37;
-    color: #000;
+    background-color: #b8860b;
 }
 
-/* Receita Detalhada */
-#receitaDetalhada {
-    background-color: #111;
-    padding: 20px;
-    border: 1px solid #d4af37;
-    border-radius: 10px;
-    color: #d4af37;
+#bebidas-list {
     margin-top: 20px;
+    text-align: left;
+    display: inline-block;
+    width: 100%;
 }
 
-/* Loja */
-.produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.produtos .produto {
-    background-color: #222;
-    padding: 15px;
-    border: 1px solid #d4af37;
-    border-radius: 8px;
-    text-align: center;
+/* IA de Receitas */
+#ia {
+    padding: 50px;
+    background-color: #1a1a1a;
     color: #fff;
 }
 
-.produtos .produto img {
+#ia h2 {
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 30px;
+}
+
+#iaForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#iaForm textarea,
+#iaForm input {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+}
+
+#iaForm button {
+    background-color: #d4af37;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#receitaDetalhada {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 5px;
+    color: #d4af37;
+}
+
+/* Loja */
+#loja {
+    padding: 50px;
+    text-align: center;
+}
+
+#loja h2 {
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 30px;
+}
+
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.produto {
+    background-color: #1a1a1a;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    width: 200px;
+    color: #fff;
+}
+
+.produto img {
     max-width: 100%;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
-.produtos .produto button {
-    margin-top: 10px;
-    background-color: #d4af37;
-    border: none;
-    padding: 10px;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.produtos .produto button:hover {
-    background-color: #b99524;
+.produto h3 {
+    margin: 15px 0;
+    color: #d4af37;
 }
 
 /* Rodapé */
 footer {
     text-align: center;
-    padding: 30px 0;
-    background-color: #111;
-    border-top: 2px solid #d4af37;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-top: 2px solid #fff;
     color: #d4af37;
-    font-size: 1rem;
 }
