@@ -25,7 +25,8 @@
                 <li><a href="#category2">Destilados</a></li>
                 <li><a href="#category3">Vinhos</a></li>
                 <li><a href="#adega">Adega</a></li>
-                <li><a href="#login">Login</a></li>
+                <li><a href="#" id="login-link" onclick="showLogin()">Login</a></li>
+                <li><a href="#" id="create-link" onclick="showCreateAccount()">Criar Conta</a></li>
             </ul>
         </nav>
     </header>
@@ -47,18 +48,19 @@
                 <p>Modo de preparo: Combine tudo em um copo grande com gelo.</p>
             </div>
         </div>
+        <!-- Mais bebidas -->
         <div class="category">
-            <h3>Cerveja IPA</h3>
-            <button onclick="showRecipe('ipa')">Ver Receita</button>
-            <div class="recipe-details" id="ipa">
-                <h4>Receita IPA</h4>
+            <h3>Cerveja Stout</h3>
+            <button onclick="showRecipe('stout')">Ver Receita</button>
+            <div class="recipe-details" id="stout">
+                <h4>Receita Stout</h4>
                 <p>Ingredientes:</p>
                 <ul>
-                    <li>350ml de Cerveja IPA</li>
-                    <li>25ml de Suco de Laranja</li>
+                    <li>350ml de Cerveja Stout</li>
+                    <li>50ml de Creme de Leite</li>
                     <li>Gelo</li>
                 </ul>
-                <p>Modo de preparo: Coloque a cerveja e o suco em um copo grande com gelo. Mexa suavemente.</p>
+                <p>Modo de preparo: Combine todos os ingredientes em um copo com gelo e misture.</p>
             </div>
         </div>
     </section>
@@ -80,20 +82,19 @@
                 <p>Modo de preparo: Misture os ingredientes em uma coqueteleira e sirva em copo baixo com gelo.</p>
             </div>
         </div>
+        <!-- Mais bebidas -->
         <div class="category">
-            <h3>Tequila</h3>
-            <button onclick="showRecipe('tequila')">Ver Receita</button>
-            <div class="recipe-details" id="tequila">
-                <h4>Receita Margarita</h4>
+            <h3>Vodka</h3>
+            <button onclick="showRecipe('vodka')">Ver Receita</button>
+            <div class="recipe-details" id="vodka">
+                <h4>Receita Vodka Martini</h4>
                 <p>Ingredientes:</p>
                 <ul>
-                    <li>50ml de Tequila</li>
-                    <li>25ml de Suco de Limão</li>
-                    <li>15ml de Licor de Laranja</li>
-                    <li>Sal para a borda do copo</li>
+                    <li>50ml de Vodka</li>
+                    <li>10ml de Vermute Seco</li>
                     <li>Gelo</li>
                 </ul>
-                <p>Modo de preparo: Misture todos os ingredientes em uma coqueteleira e sirva em copo com a borda salgada.</p>
+                <p>Modo de preparo: Misture em uma coqueteleira e sirva em taça de martini.</p>
             </div>
         </div>
     </section>
@@ -140,15 +141,24 @@
         </div>
     </section>
 
-    <!-- Login -->
-    <section id="login">
-        <h2>Login</h2>
-        <form id="login-form">
-            <input type="email" id="email" placeholder="Email" required><br>
-            <input type="password" id="password" placeholder="Senha" required><br>
-            <button type="submit">Entrar</button>
-        </form>
-    </section>
+    <!-- Tela de Login/Criação de Conta -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h2>Login ou Criação de Conta</h2>
+            <form id="login-form">
+                <input type="email" id="email" placeholder="Email" required><br>
+                <input type="password" id="password" placeholder="Senha" required><br>
+                <button type="submit" id="submit-login">Login</button>
+            </form>
+            <form id="create-form" style="display:none;">
+                <input type="email" id="create-email" placeholder="Email" required><br>
+                <input type="password" id="create-password" placeholder="Senha" required><br>
+                <input type="text" id="create-cep" placeholder="CEP" required><br>
+                <button type="submit" id="submit-create">Criar Conta</button>
+            </form>
+            <button onclick="closeLogin()">Fechar</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
