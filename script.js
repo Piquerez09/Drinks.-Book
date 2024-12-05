@@ -7,8 +7,11 @@ function showRecipe(drink) {
     const recipes = {
         Mojito: "Ingredientes: Rum, hortelã, açúcar, limão e soda. Modo de preparo: Misture os ingredientes...",
         Caipirinha: "Ingredientes: Cachaça, limão, açúcar e gelo. Modo de preparo: Amasse o limão com o açúcar...",
+        'Piña Colada': "Ingredientes: Rum, leite de coco, abacaxi. Modo de preparo: Misture tudo no liquidificador...",
         'Vinho Tinto': "O vinho tinto é servido gelado ou à temperatura ambiente. Serve bem com carnes vermelhas...",
-        Whisky: "Whisky Escocês é um destilado premium, geralmente consumido puro ou em drinks como o 'Old Fashioned'..."
+        'Vinho Branco': "Vinho branco é servido gelado. É uma ótima opção para pratos leves como frutos do mar...",
+        Whisky: "Whisky Escocês é um destilado premium, geralmente consumido puro ou em drinks como o 'Old Fashioned'...",
+        Rum: "O rum é uma base comum em coquetéis tropicais, sendo versátil em várias combinações..."
     };
 
     document.getElementById("recipe-text").textContent = recipes[drink];
