@@ -11,8 +11,8 @@ function verifyAge(isAdult) {
 // Função para mostrar a receita detalhada
 function showRecipe(drink) {
   const recipes = document.querySelectorAll('.recipe-details');
-  recipes.forEach(recipe => recipe.style.display = 'none'); // Esconde todas as receitas
-  document.getElementById(drink).style.display = 'block'; // Exibe a receita clicada
+  recipes.forEach(recipe => recipe.style.display = 'none');
+  document.getElementById(drink).style.display = 'block';
 }
 
 // Funções para mostrar e fechar o modal de login/criação

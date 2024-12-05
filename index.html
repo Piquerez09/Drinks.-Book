@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa de Bebidas Alcoólicas - Elegância e Sabor</title>
+    <title>Empresa de Bebidas - Elegância e Sabor</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,14 +11,14 @@
     <div id="age-verification-overlay">
         <div id="age-verification-modal">
             <h2>Você tem 18 anos ou mais?</h2>
-            <button onclick="verifyAge(true)">Sim</button>
-            <button onclick="verifyAge(false)">Não</button>
+            <button class="age-button" onclick="verifyAge(true)">Sim</button>
+            <button class="age-button" onclick="verifyAge(false)">Não</button>
         </div>
     </div>
 
     <!-- Barra de navegação -->
     <header class="navbar">
-        <div class="logo">Logo Empresa</div>
+        <div class="logo">Bebidas de Luxo</div>
         <nav>
             <ul>
                 <li><a href="#category1">Cervejas</a></li>
@@ -31,7 +31,7 @@
         </nav>
     </header>
 
-    <!-- Categorias de Bebidas -->
+    <!-- Conteúdo das Categorias -->
     <section id="category1">
         <h2>Cervejas</h2>
         <div class="category">
@@ -48,7 +48,6 @@
                 <p>Modo de preparo: Combine tudo em um copo grande com gelo.</p>
             </div>
         </div>
-        <!-- Mais bebidas -->
         <div class="category">
             <h3>Cerveja Stout</h3>
             <button onclick="showRecipe('stout')">Ver Receita</button>
@@ -82,7 +81,6 @@
                 <p>Modo de preparo: Misture os ingredientes em uma coqueteleira e sirva em copo baixo com gelo.</p>
             </div>
         </div>
-        <!-- Mais bebidas -->
         <div class="category">
             <h3>Vodka</h3>
             <button onclick="showRecipe('vodka')">Ver Receita</button>
@@ -141,7 +139,7 @@
         </div>
     </section>
 
-    <!-- Tela de Login/Criação de Conta -->
+    <!-- Modal de Login/Criação de Conta -->
     <div id="login-modal" class="modal">
         <div class="modal-content">
             <h2>Login ou Criação de Conta</h2>
@@ -160,9 +158,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Empresa de Bebidas Alcoólicas</p>
+        <p>&copy; 2024 Bebidas de Luxo</p>
     </footer>
 
     <script src="script.js"></script>
