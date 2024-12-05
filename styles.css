@@ -1,91 +1,169 @@
-/* Estilo refinado para o design */
+/* Reset de estilo básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Garamond', serif;
   background-color: #f4f4f4;
   color: #333;
+  line-height: 1.6;
+  padding: 20px;
 }
 
-header .navbar {
-  background-color: #1c1c1c;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header .navbar .logo {
-  font-size: 24px;
-  color: gold;
+/* Barra de navegação */
+header.navbar {
+  background-color: #000;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
-header .navbar nav ul {
-  list-style-type: none;
+header .logo {
+  font-size: 2.5em;
+  color: #fff;
+  font-weight: 700;
+}
+
+header nav ul {
+  list-style: none;
   padding: 0;
-  margin: 0;
-  display: flex;
+  margin-top: 20px;
 }
 
-header .navbar nav ul li {
-  margin-left: 20px;
+header nav ul li {
+  display: inline-block;
+  margin: 0 20px;
 }
 
-header .navbar nav ul li a {
+header nav ul li a {
+  color: #fff;
   text-decoration: none;
-  color: white;
-  font-size: 18px;
-  padding: 10px;
+  font-size: 1.2em;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
-header .navbar nav ul li a:hover {
-  color: gold;
+header nav ul li a:hover {
+  color: #ffd700;
 }
 
-.category {
-  margin: 20px 0;
-  padding: 15px;
+/* Área de iniciais do usuário */
+#user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-initials {
+  background-color: #ffd700;
+  color: #000;
+  font-size: 1.8em;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+/* Modal e Login */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-content {
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.recipe-details {
-  display: none;
-  background-color: #fafafa;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
 }
 
 button {
-  background-color: #f39c12;
+  background-color: #000;
   color: white;
+  padding: 12px 25px;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
   cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #e67e22;
+  background-color: #ffd700;
 }
 
-#user-info {
-  display: none;
-}
-
-.user-initials {
-  background-color: #1c1c1c;
-  color: gold;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 18px;
-  width: 50px;
-  height: 50px;
+/* Sobreposição da verificação de idade */
+#age-verification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10000;
 }
+
+#age-verification-modal {
+  background-color: #fff;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.age-button {
+  background-color: #000;
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  font-size: 1.5em;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.age-button:hover {
+  background-color: #ffd700;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: white;
+  margin-top: 50px;
+}
+
+

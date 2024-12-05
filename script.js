@@ -1,41 +1,38 @@
-// Função para verificar idade
+// Função de verificação de idade
 function verifyAge(isAdult) {
+  const overlay = document.getElementById("age-verification-overlay");
   if (isAdult) {
-      document.getElementById('age-verification-overlay').style.display = 'none';
+      overlay.style.display = "none";
   } else {
-      window.location.href = "https://www.google.com"; // Redireciona se não tiver 18 anos
+      window.location.href = "https://www.google.com";
   }
 }
 
-// Mostrar a receita detalhada de cada bebida
-function showRecipe(id) {
+// Função para mostrar a receita detalhada
+function showRecipe(drink) {
   const recipes = document.querySelectorAll('.recipe-details');
   recipes.forEach(recipe => recipe.style.display = 'none');
-  
-  const recipe = document.getElementById(id);
-  if (recipe) {
-      recipe.style.display = 'block';
-  }
+  document.getElementById(drink).style.display = 'block';
 }
 
-// Modal de login e criação de conta
+// Funções para mostrar e fechar o modal de login/criação
 function showLogin() {
-  document.getElementById('login-modal').style.display = 'block';
-  document.getElementById('login-form').style.display = 'block';
-  document.getElementById('create-form').style.display = 'none';
+  document.getElementById("login-modal").style.display = "flex";
+  document.getElementById("create-form").style.display = "none";
+  document.getElementById("login-form").style.display = "block";
 }
 
 function showCreateAccount() {
-  document.getElementById('login-modal').style.display = 'block';
-  document.getElementById('create-form').style.display = 'block';
-  document.getElementById('login-form').style.display = 'none';
+  document.getElementById("login-modal").style.display = "flex";
+  document.getElementById("create-form").style.display = "block";
+  document.getElementById("login-form").style.display = "none";
 }
 
 function closeLogin() {
-  document.getElementById('login-modal').style.display = 'none';
+  document.getElementById("login-modal").style.display = "none";
 }
 
-// Função de login
+// Função de Login (simulação com localStorage)
 document.getElementById('login-form').addEventListener('submit', function(event) {
   event.preventDefault();
   const email = document.getElementById('email').value;
@@ -56,7 +53,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   }
 });
 
-// Criação de conta
+// Função de Criação de Conta
 document.getElementById('create-form').addEventListener('submit', function(event) {
   event.preventDefault();
   const email = document.getElementById('create-email').value;
@@ -76,4 +73,3 @@ document.getElementById('create-form').addEventListener('submit', function(event
   alert('Conta criada com sucesso!');
   closeLogin();
 });
-
