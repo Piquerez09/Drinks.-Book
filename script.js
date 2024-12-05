@@ -14,3 +14,15 @@ function showRecipe(drink) {
   recipes.forEach(recipe => recipe.style.display = 'none'); // Esconde todas as receitas
   document.getElementById(drink).style.display = 'block'; // Exibe a receita clicada
 }
+
+// Função simples de login (sem backend, apenas demonstração)
+document.getElementById('login-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  if (email && password) {
+      alert('Login bem-sucedido!');
+  } else {
+      alert('Por favor, preencha todos os campos.');
+  }
+});
