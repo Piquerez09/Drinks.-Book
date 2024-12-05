@@ -1,129 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bebidas de Luxo</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Bebidas</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Garamond:wght@400;700&family=Helvetica&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Modal de Verificação de Idade -->
-    <div id="age-verification" class="overlay">
-        <div class="popup">
-            <h2>Verifique sua Idade</h2>
-            <p>Você tem 18 anos ou mais?</p>
-            <button id="age-yes">Sim</button>
-            <button id="age-no">Não</button>
-        </div>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">Catálogo de Bebidas</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#italia-drinks">Itália Drinks</a></li>
+        <li><a href="#pesquisa">Pesquisa</a></li>
+        <li><a href="#sobre-nos">Sobre Nós</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner Principal -->
+  <section id="home" class="banner">
+    <h1>Descubra o Mundo das Bebidas</h1>
+    <p>Refinado para Você</p>
+  </section>
+
+  <!-- Seção de Destaques -->
+  <section id="destaques" class="destaques">
+    <h2>Destaques</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="img/negroni.jpg" alt="Negroni">
+        <h3>Negroni</h3>
+        <p>O clássico italiano que nunca sai de moda.</p>
+      </div>
+      <div class="card">
+        <img src="img/aperol-spritz.jpg" alt="Aperol Spritz">
+        <h3>Aperol Spritz</h3>
+        <p>Leve e refrescante, perfeito para o verão.</p>
+      </div>
+      <div class="card">
+        <img src="img/bellini.jpg" alt="Bellini">
+        <h3>Bellini</h3>
+        <p>Elegância em cada gole.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Cabeçalho -->
-    <header>
-        <div class="logo">
-            <h1>Bebidas de Luxo</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#cocktails">Coquetéis</a></li>
-                <li><a href="#wines">Vinhos</a></li>
-                <li><a href="#spirits">Destilados</a></li>
-                <li><a href="#cellar">Adega</a></li>
-                <li><a href="#cart">Carrinho</a></li>
-            </ul>
-        </nav>
-    </header>
-      <section id="cocktails">
-        <h2>Coquetéis</h2>
-        <div class="category">
-            <div class="drink" onclick="showRecipe('Mojito')">
-                <h3>Mojito</h3>
-                <img src="https://www.minhareceita.com.br/app/uploads/2024/07/mobile-Mojito-final.png" alt="Mojito">
-            </div>
-            <div class="drink" onclick="showRecipe('Caipirinha')">
-                <h3>Caipirinha</h3>
-                <img src="https://revistaatencao.com.br/wp-content/uploads/2021/04/CAIPIRINHA.jpeg" alt="Caipirinha">
-            </div>
-            <div class="drink" onclick="showRecipe('Piña Colada')">
-                <h3>Piña Colada</h3>
-                <!-- Imagem atualizada da Piña Colada -->
-                <img src="https://thechutneylife.com/wp-content/uploads/2024/06/kaffirlimeleavespinacolada-9-scaled.jpg" alt="Piña Colada">
-            </div>
-        </div>
-    </section>    
-    <section id="wines">
-        <h2>Vinhos</h2>
-        <div class="category">
-            <div class="drink" onclick="showRecipe('Vinho Tinto')">
-                <h3>Vinho Tinto Premium</h3>
-                <img src="wine.jpg" alt="Vinho Tinto">
-            </div>
-            <div class="drink" onclick="showRecipe('Vinho Branco')">
-                <h3>Vinho Branco</h3>
-                <img src="white-wine.jpg" alt="Vinho Branco">
-            </div>
-        </div>
-    </section>
-
-    <section id="spirits">
-        <h2>Destilados</h2>
-        <div class="category">
-            <div class="drink" onclick="showRecipe('Whisky')">
-                <h3>Whisky Escocês</h3>
-                <img src="whisky.jpg" alt="Whisky">
-            </div>
-            <div class="drink" onclick="showRecipe('Rum')">
-                <h3>Rum</h3>
-                <img src="rum.jpg" alt="Rum">
-            </div>
-        </div>
-    </section>
-
-    <!-- Adega -->
-    <section id="cellar">
-        <h2>Adega</h2>
-        <div class="product">
-            <h3>Vinho Tinto Premium</h3>
-            <p>R$ 250,00</p>
-            <button onclick="addToCart('Vinho Tinto Premium', 250)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <h3>Whisky Escocês</h3>
-            <p>R$ 350,00</p>
-            <button onclick="addToCart('Whisky Escocês', 350)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <h3>Rum</h3>
-            <p>R$ 150,00</p>
-            <button onclick="addToCart('Rum', 150)">Adicionar ao Carrinho</button>
-        </div>
-    </section>
-
-    <!-- Carrinho -->
-    <section id="cart">
-        <h2>Carrinho de Compras</h2>
-        <div id="cart-items">
-            <p>Seu carrinho está vazio</p>
-        </div>
-        <div id="cart-total">
-            <p>Total: R$ 0,00</p>
-        </div>
-        <button id="checkout-button" onclick="checkout()">Finalizar Compra</button>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Bebidas de Luxo. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Pop-up de Receita -->
-    <div id="recipe-popup" class="recipe-popup">
-        <p id="recipe-text"></p>
-        <button onclick="closeRecipe()">Fechar</button>
-        <button onclick="minimizeRecipe()">Minimizar</button>
+  <!-- Seção de Categorias -->
+  <section id="categorias" class="categorias">
+    <h2>Categorias</h2>
+    <div class="category-grid">
+      <div class="category">
+        <h3>Clássicos</h3>
+        <p>Receitas atemporais.</p>
+      </div>
+      <div class="category">
+        <h3>Tropicais</h3>
+        <p>Sabor e frescor exóticos.</p>
+      </div>
+      <div class="category">
+        <h3>Modernos</h3>
+        <p>O que há de novo no mundo dos drinks.</p>
+      </div>
+      <div class="category">
+        <h3>Itália Drinks</h3>
+        <p>Autênticos sabores italianos.</p>
+      </div>
     </div>
+  </section>
 
-    <script src="scripts.js"></script>
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Catálogo de Bebidas. Todos os direitos reservados.</p>
+      <ul class="social-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
-
-
 
