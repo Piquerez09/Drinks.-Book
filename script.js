@@ -1,4 +1,3 @@
-// Variáveis de carrinho
 let cart = [];
 let total = 0;
 
@@ -23,18 +22,10 @@ function closeRecipe() {
     document.getElementById("recipe-popup").style.display = "none";
 }
 
-// Verificação de Idade
-document.getElementById('age-yes').addEventListener('click', () => {
-    document.getElementById('age-verification').classList.remove('show');
-});
-
-document.getElementById('age-no').addEventListener('click', () => {
-    window.location.href = 'https://www.google.com';
-});
-
-window.onload = () => {
-    document.getElementById('age-verification').classList.add('show');
-};
+// Função para minimizar receita
+function minimizeRecipe() {
+    document.getElementById("recipe-popup").style.display = "none";
+}
 
 // Função para adicionar ao carrinho
 function addToCart(product, price) {
@@ -68,3 +59,16 @@ function checkout() {
         alert('Seu carrinho está vazio!');
     }
 }
+
+// Verificação de Idade
+document.getElementById('age-yes').addEventListener('click', () => {
+    document.getElementById('age-verification').classList.remove('show');
+});
+
+document.getElementById('age-no').addEventListener('click', () => {
+    window.location.href = 'https://www.google.com';
+});
+
+window.onload = () => {
+    document.getElementById('age-verification').classList.add('show');
+};
