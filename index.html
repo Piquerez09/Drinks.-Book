@@ -3,66 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa de Bebidas - Elegância e Sabor</title>
+    <title>Site de Bebidas de Luxo</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Verificação de idade -->
-    <div id="age-verification-overlay">
-        <div id="age-verification-modal">
-            <h2>Você tem 18 anos ou mais?</h2>
-            <button class="age-button" onclick="verifyAge(true)">Sim</button>
-            <button class="age-button" onclick="verifyAge(false)">Não</button>
+    <!-- Tela de verificação de idade -->
+    <div id="age-verification" class="overlay">
+        <div class="popup">
+            <p>Você tem 18 anos ou mais?</p>
+            <button id="age-yes">Sim</button>
+            <button id="age-no">Não</button>
         </div>
     </div>
 
-    <!-- Barra de navegação -->
-    <header class="navbar">
-        <div class="logo">Bebidas de Luxo</div>
+    <!-- Cabeçalho -->
+    <header>
         <nav>
             <ul>
-                <li><a href="#category1">Cervejas</a></li>
-                <li><a href="#category2">Destilados</a></li>
-                <li><a href="#category3">Vinhos</a></li>
-                <li><a href="#adega">Adega</a></li>
-                <li id="login-link-container">
-                    <a href="#" id="login-link" onclick="showLogin()">Login</a>
-                    <a href="#" id="create-link" onclick="showCreateAccount()">Criar Conta</a>
-                </li>
-                <li id="user-info" style="display: none;">
-                    <span id="user-initials" class="user-initials"></span>
-                </li>
+                <li><a href="#cocktails">Coquetéis</a></li>
+                <li><a href="#wines">Vinhos</a></li>
+                <li><a href="#spirits">Destilados</a></li>
+                <li><a href="#cellar">Adega</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Conteúdo das Categorias -->
-    <!-- ... (conteúdo das bebidas, como no exemplo anterior) -->
-
-    <!-- Modal de Login/Criação de Conta -->
-    <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <h2>Login ou Criação de Conta</h2>
-            <form id="login-form">
-                <input type="email" id="email" placeholder="Email" required><br>
-                <input type="password" id="password" placeholder="Senha" required><br>
-                <button type="submit" id="submit-login">Login</button>
-            </form>
-            <form id="create-form" style="display:none;">
-                <input type="email" id="create-email" placeholder="Email" required><br>
-                <input type="password" id="create-password" placeholder="Senha" required><br>
-                <input type="text" id="create-cep" placeholder="CEP" required><br>
-                <input type="text" id="create-initials" maxlength="2" placeholder="Qual letra você gostaria de usar? (máx 2)" required><br>
-                <button type="submit" id="submit-create">Criar Conta</button>
-            </form>
-            <button onclick="closeLogin()">Fechar</button>
+    <!-- Seções de categorias -->
+    <section id="cocktails">
+        <h2>Coquetéis</h2>
+        <div class="category">
+            <div class="drink" onclick="showRecipe('Mojito')">
+                <h3>Mojito</h3>
+            </div>
+            <div class="drink" onclick="showRecipe('Caipirinha')">
+                <h3>Caipirinha</h3>
+            </div>
+            <!-- Outras bebidas podem ser adicionadas aqui -->
         </div>
-    </div>
+        <div id="recipe" class="recipe-popup">
+            <p id="recipe-text"></p>
+            <button onclick="closeRecipe()">Fechar</button>
+        </div>
+    </section>
+
+    <section id="wines">
+        <h2>Vinhos</h2>
+        <!-- Listagem de vinhos -->
+    </section>
+
+    <section id="spirits">
+        <h2>Destilados</h2>
+        <!-- Listagem de destilados -->
+    </section>
+
+    <!-- Adega -->
+    <section id="cellar">
+        <h2>Adega</h2>
+        <div class="product">
+            <h3>Vinho Tinto Premium</h3>
+            <button>Comprar</button>
+        </div>
+        <div class="product">
+            <h3>Whisky Escocês</h3>
+            <button>Comprar</button>
+        </div>
+        <!-- Mais produtos podem ser adicionados aqui -->
+    </section>
 
     <footer>
-        <p>&copy; 2024 Bebidas de Luxo</p>
+        <p>&copy; 2024 Bebidas de Luxo. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
