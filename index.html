@@ -24,116 +24,149 @@
                 <li><a href="#category1">Cervejas</a></li>
                 <li><a href="#category2">Destilados</a></li>
                 <li><a href="#category3">Vinhos</a></li>
+                <li><a href="#category4">Whiskys</a></li>
+                <li><a href="#category5">Gin</a></li>
+                <li><a href="#category6">Coquetéis</a></li>
                 <li><a href="#adega">Adega</a></li>
-                <li><a href="#" id="login-link" onclick="showLogin()">Login</a></li>
-                <li><a href="#" id="create-link" onclick="showCreateAccount()">Criar Conta</a></li>
+                <li id="login-link-container">
+                    <a href="#" id="login-link" onclick="showLogin()">Login</a>
+                    <a href="#" id="create-link" onclick="showCreateAccount()">Criar Conta</a>
+                </li>
+                <li id="user-info" style="display: none;">
+                    <span id="user-initials" class="user-initials"></span>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <!-- Conteúdo das Categorias -->
-    <section id="category1">
-        <h2>Cervejas</h2>
-        <div class="category">
-            <h3>Cerveja Pilsner</h3>
-            <button onclick="showRecipe('pilsner')">Ver Receita</button>
-            <div class="recipe-details" id="pilsner">
-                <h4>Receita Pilsner</h4>
-                <p>Ingredientes:</p>
-                <ul>
-                    <li>500ml de Cerveja Pilsner</li>
-                    <li>50ml de Limão</li>
-                    <li>Gelo a gosto</li>
-                </ul>
-                <p>Modo de preparo: Combine tudo em um copo grande com gelo.</p>
-            </div>
+    <!-- Categorias de Bebidas -->
+    <section id="category1" class="category">
+        <h3>Cervejas</h3>
+        <button onclick="showRecipe('beer1')">Cerveja Lager</button>
+        <button onclick="showRecipe('beer2')">Cerveja IPA</button>
+
+        <div id="beer1" class="recipe-details">
+            <h4>Cerveja Lager</h4>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>500 ml de malte de cevada</li>
+                <li>30 g de lúpulo</li>
+                <li>15 g de levedura</li>
+                <li>Água</li>
+            </ul>
+            <p>Método: Misture os ingredientes, fermente por 7 dias e sirva gelada.</p>
         </div>
-        <div class="category">
-            <h3>Cerveja Stout</h3>
-            <button onclick="showRecipe('stout')">Ver Receita</button>
-            <div class="recipe-details" id="stout">
-                <h4>Receita Stout</h4>
-                <p>Ingredientes:</p>
-                <ul>
-                    <li>350ml de Cerveja Stout</li>
-                    <li>50ml de Creme de Leite</li>
-                    <li>Gelo</li>
-                </ul>
-                <p>Modo de preparo: Combine todos os ingredientes em um copo com gelo e misture.</p>
-            </div>
+
+        <div id="beer2" class="recipe-details">
+            <h4>Cerveja IPA</h4>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>550 ml de malte de cevada</li>
+                <li>40 g de lúpulo</li>
+                <li>15 g de levedura</li>
+                <li>Água</li>
+            </ul>
+            <p>Método: Misture os ingredientes, fermente por 8 dias e sirva com um toque de amargor.</p>
         </div>
     </section>
 
-    <section id="category2">
-        <h2>Destilados</h2>
-        <div class="category">
-            <h3>Whisky</h3>
-            <button onclick="showRecipe('whisky')">Ver Receita</button>
-            <div class="recipe-details" id="whisky">
-                <h4>Receita Whisky Sour</h4>
-                <p>Ingredientes:</p>
-                <ul>
-                    <li>50ml de Whisky</li>
-                    <li>20ml de Suco de Limão</li>
-                    <li>15ml de Xarope de Açúcar</li>
-                    <li>Gelo</li>
-                </ul>
-                <p>Modo de preparo: Misture os ingredientes em uma coqueteleira e sirva em copo baixo com gelo.</p>
-            </div>
+    <section id="category2" class="category">
+        <h3>Destilados</h3>
+        <button onclick="showRecipe('vodka')">Vodka</button>
+        <button onclick="showRecipe('rum')">Rum</button>
+
+        <div id="vodka" class="recipe-details">
+            <h4>Vodka</h4>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>500 ml de vodka de trigo</li>
+                <li>10 g de essência de erva-doce</li>
+                <li>Água destilada</li>
+            </ul>
+            <p>Método: Misture todos os ingredientes e filtre antes de servir.</p>
         </div>
-        <div class="category">
-            <h3>Vodka</h3>
-            <button onclick="showRecipe('vodka')">Ver Receita</button>
-            <div class="recipe-details" id="vodka">
-                <h4>Receita Vodka Martini</h4>
-                <p>Ingredientes:</p>
-                <ul>
-                    <li>50ml de Vodka</li>
-                    <li>10ml de Vermute Seco</li>
-                    <li>Gelo</li>
-                </ul>
-                <p>Modo de preparo: Misture em uma coqueteleira e sirva em taça de martini.</p>
-            </div>
+
+        <div id="rum" class="recipe-details">
+            <h4>Rum</h4>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>500 ml de melaço</li>
+                <li>40 g de fermento</li>
+                <li>Água</li>
+            </ul>
+            <p>Método: Fermente os ingredientes por 3 semanas e engarrafe.</p>
         </div>
     </section>
 
-    <section id="category3">
-        <h2>Vinhos</h2>
-        <div class="category">
-            <h3>Vinho Tinto</h3>
-            <button onclick="showRecipe('vinho_tinto')">Ver Receita</button>
-            <div class="recipe-details" id="vinho_tinto">
-                <h4>Receita Vinho Quente</h4>
-                <p>Ingredientes:</p>
-                <ul>
-                    <li>1 garrafa de Vinho Tinto</li>
-                    <li>50g de Açúcar</li>
-                    <li>1 Pau de Canela</li>
-                    <li>Cravos da Índia</li>
-                    <li>1 Laranja</li>
-                </ul>
-                <p>Modo de preparo: Aqueça todos os ingredientes em uma panela até ferver. Sirva quente.</p>
-            </div>
+    <section id="category4" class="category">
+        <h3>Whiskys</h3>
+        <button onclick="showRecipe('whisky1')">Whisky Bourbon</button>
+        <button onclick="showRecipe('whisky2')">Whisky Escocês</button>
+
+        <div id="whisky1" class="recipe-details">
+            <h4>Whisky Bourbon</h4>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>70% milho</li>
+                <li>20% cevada</li>
+                <li>10% centeio</li>
+                <li>Água</li>
+            </ul>
+            <p>Método: Misture e envelheça em barris de carvalho por pelo menos 2 anos.</p>
+        </div>
+
+        <div id="whisky2" class="recipe-details">
+            <h4>Whisky Escocês</h4>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>70% cevada maltada</li>
+                <li>Água</li>
+                <li>Fermento</li>
+            </ul>
+            <p>Método: Fermente, destile e envelheça por no mínimo 3 anos.</p>
         </div>
     </section>
 
-    <!-- Adega (Loja) -->
+    <section id="category5" class="category">
+        <h3>Gin</h3>
+        <button onclick="showRecipe('gin1')">Gin London Dry</button>
+        <button onclick="showRecipe('gin2')">Gin Tangerine</button>
+
+        <div id="gin1" class="recipe-details">
+            <h4>Gin London Dry</h4>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>500 ml de álcool neutro</li>
+                <li>40 g de zimbro</li>
+                <li>Água de diluição</li>
+            </ul>
+            <p>Método: Destile com botânicos e dilua até 40% ABV.</p>
+        </div>
+
+        <div id="gin2" class="recipe-details">
+            <h4>Gin Tangerine</h4>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>500 ml de gin</li>
+                <li>100 ml de suco de tangerina</li>
+                <li>40 g de açúcar</li>
+            </ul>
+            <p>Método: Misture os ingredientes e sirva com gelo.</p>
+        </div>
+    </section>
+
+    <!-- Adega -->
     <section id="adega">
-        <h2>Adega</h2>
+        <h3>Adega</h3>
         <div class="shop-items">
             <div class="item">
                 <img src="whisky-bottle.jpg" alt="Whisky">
-                <p>Whisky Premium - R$ 299,99</p>
+                <h4>Whisky Bourbon</h4>
                 <button>Comprar</button>
             </div>
             <div class="item">
-                <img src="beer-bottle.jpg" alt="Cerveja">
-                <p>Cerveja IPA - R$ 39,99</p>
-                <button>Comprar</button>
-            </div>
-            <div class="item">
-                <img src="wine-bottle.jpg" alt="Vinho">
-                <p>Vinho Tinto - R$ 89,99</p>
+                <img src="gin-bottle.jpg" alt="Gin">
+                <h4>Gin London Dry</h4>
                 <button>Comprar</button>
             </div>
         </div>
@@ -151,6 +184,7 @@
             <form id="create-form" style="display:none;">
                 <input type="email" id="create-email" placeholder="Email" required><br>
                 <input type="password" id="create-password" placeholder="Senha" required><br>
+                <input type="text" id="create-initials" placeholder="Iniciais (opcional)" maxlength="2"><br>
                 <input type="text" id="create-cep" placeholder="CEP" required><br>
                 <button type="submit" id="submit-create">Criar Conta</button>
             </form>
@@ -158,10 +192,8 @@
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Bebidas de Luxo</p>
-    </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
+
+
