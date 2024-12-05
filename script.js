@@ -1,56 +1,67 @@
-// Função para exibir a receita da bebida
+// Variáveis de carrinho
+let cart = [];
+let total = 0;
+
+// Função para mostrar receita da bebida
 function showRecipe(drink) {
-  const recipes = {
-      Mojito: "Ingredientes: Rum, hortelã, açúcar, limão e soda. Modo de preparo: Misture os ingredientes...",
-      Caipirinha: "Ingredientes: Cachaça, limão, açúcar e gelo. Modo de preparo: Amasse o limão com o açúcar...",
-      'Vinho Tinto': "O vinho tinto é servido gelado ou à temperatura ambiente. Serve bem com carnes vermelhas...",
-      Whisky: "Whisky Escocês é um destilado premium, geralmente consumido puro ou em drinks como o 'Old Fashioned'...",
-  };
+    const recipes = {
+        Mojito: "Ingredientes: Rum, hortelã, açúcar, limão e soda. Modo de preparo: Misture os ingredientes...",
+        Caipirinha: "Ingredientes: Cachaça, limão, açúcar e gelo. Modo de preparo: Amasse o limão com o açúcar...",
+        'Vinho Tinto': "O vinho tinto é servido gelado ou à temperatura ambiente. Serve bem com carnes vermelhas...",
+        Whisky: "Whisky Escocês é um destilado premium, geralmente consumido puro ou em drinks como o 'Old Fashioned'..."
+    };
 
-  document.getElementById("recipe-text").textContent = recipes[drink];
-  document.getElementById("recipe-popup").style.display = "block";
+    document.getElementById("recipe-text").textContent = recipes[drink];
+    document.getElementById("recipe-popup").style.display = "block";
 }
 
-// Fechar o pop-up da receita
+// Função para fechar pop-up de receita
 function closeRecipe() {
-  document.getElementById("recipe-popup").style.display = "none";
+    document.getElementById("recipe-popup").style.display = "none";
 }
 
-// Funções de verificação de idade
+// Verificação de Idade
 document.getElementById('age-yes').addEventListener('click', () => {
-  document.getElementById('age-verification').classList.remove('show');
+    document.getElementById('age-verification').classList.remove('show');
 });
 
 document.getElementById('age-no').addEventListener('click', () => {
-  window.location.href = 'https://www.google.com';
+    window.location.href = 'https://www.google.com';
 });
 
-// Mostrar o modal de verificação de idade ao carregar o site
 window.onload = () => {
-  document.getElementById('age-verification').classList.add('show');
+    document.getElementById('age-verification').classList.add('show');
 };
 
-// Função para adicionar produtos ao carrinho
-let cart = [];
-
+// Função para adicionar ao carrinho
 function addToCart(product, price) {
-  cart.push({ product, price });
-  updateCart();
+    cart.push({ product, price });
+    total += price;
+    updateCart();
 }
 
-// Atualizar a exibição do carrinho
+// Função para atualizar carrinho
 function updateCart() {
-  const cartItems = document.getElementById('cart-items');
-  cartItems.innerHTML = cart.length > 0 ? cart.map(item => `<p>${item.product} - R$ ${item.price}</p>`).join('') : '<p>Seu carrinho está vazio</p>';
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    if (cart.length > 0) {
+        cartItems.innerHTML = cart.map(item => `<p>${item.product} - R$ ${item.price}</p>`).join('');
+        cartTotal.innerHTML = `<p>Total: R$ ${total.toFixed(2)}</p>`;
+    } else {
+        cartItems.innerHTML = '<p>Seu carrinho está vazio</p>';
+        cartTotal.innerHTML = '<p>Total: R$ 0,00</p>';
+    }
 }
 
-// Finalizar compra
+// Função para finalizar compra
 function checkout() {
-  if (cart.length > 0) {
-      alert('Compra finalizada com sucesso!');
-      cart = [];
-      updateCart();
-  } else {
-      alert('Seu carrinho está vazio!');
-  }
+    if (cart.length > 0) {
+        alert('Compra finalizada com sucesso!');
+        cart = [];
+        total = 0;
+        updateCart();
+    } else {
+        alert('Seu carrinho está vazio!');
+    }
 }

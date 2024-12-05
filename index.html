@@ -28,6 +28,7 @@
                 <li><a href="#wines">Vinhos</a></li>
                 <li><a href="#spirits">Destilados</a></li>
                 <li><a href="#cellar">Adega</a></li>
+                <li><a href="#cart">Carrinho</a></li>
             </ul>
         </nav>
     </header>
@@ -44,7 +45,6 @@
                 <h3>Caipirinha</h3>
                 <img src="caipirinha.jpg" alt="Caipirinha">
             </div>
-            <!-- Mais bebidas podem ser adicionadas aqui -->
         </div>
     </section>
 
@@ -55,7 +55,6 @@
                 <h3>Vinho Tinto Premium</h3>
                 <img src="wine.jpg" alt="Vinho Tinto">
             </div>
-            <!-- Mais vinhos podem ser adicionados aqui -->
         </div>
     </section>
 
@@ -66,7 +65,6 @@
                 <h3>Whisky Escocês</h3>
                 <img src="whisky.jpg" alt="Whisky">
             </div>
-            <!-- Mais destilados podem ser adicionados aqui -->
         </div>
     </section>
 
@@ -83,7 +81,6 @@
             <p>R$ 350,00</p>
             <button onclick="addToCart('Whisky Escocês', 350)">Adicionar ao Carrinho</button>
         </div>
-        <!-- Mais produtos podem ser adicionados aqui -->
     </section>
 
     <!-- Carrinho -->
@@ -92,7 +89,10 @@
         <div id="cart-items">
             <p>Seu carrinho está vazio</p>
         </div>
-        <button onclick="checkout()">Finalizar Compra</button>
+        <div id="cart-total">
+            <p>Total: R$ 0,00</p>
+        </div>
+        <button id="checkout-button" onclick="checkout()">Finalizar Compra</button>
     </section>
 
     <footer>
