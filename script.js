@@ -1,15 +1,15 @@
 let cart = [];
 let total = 0;
 
-// Função para mostrar receita da bebida
+// Função para mostrar a receita da bebida
 function showRecipe(drink) {
     const recipes = {
-        Mojito: "Ingredientes: Rum, hortelã, açúcar, limão e soda. Modo de preparo: Misture os ingredientes...",
+        Mojito: "Ingredientes: Rum, hortelã, açúcar, limão e soda. Modo de preparo: Misture todos os ingredientes...",
         Caipirinha: "Ingredientes: Cachaça, limão, açúcar e gelo. Modo de preparo: Amasse o limão com o açúcar...",
         'Piña Colada': "Ingredientes: Rum, leite de coco, abacaxi. Modo de preparo: Misture tudo no liquidificador...",
         'Vinho Tinto': "O vinho tinto é servido gelado ou à temperatura ambiente. Serve bem com carnes vermelhas...",
         'Vinho Branco': "Vinho branco é servido gelado. É uma ótima opção para pratos leves como frutos do mar...",
-        Whisky: "Whisky Escocês é um destilado premium, geralmente consumido puro ou em drinks como o 'Old Fashioned'...",
+        Whisky: "Whisky Escocês é um destilado premium, geralmente consumido puro ou em drinks como 'Old Fashioned'...",
         Rum: "O rum é uma base comum em coquetéis tropicais, sendo versátil em várias combinações..."
     };
 
@@ -17,12 +17,12 @@ function showRecipe(drink) {
     document.getElementById("recipe-popup").style.display = "block";
 }
 
-// Função para fechar pop-up de receita
+// Função para fechar o pop-up da receita
 function closeRecipe() {
     document.getElementById("recipe-popup").style.display = "none";
 }
 
-// Função para minimizar receita
+// Função para minimizar a receita
 function minimizeRecipe() {
     document.getElementById("recipe-popup").style.display = "none";
 }
@@ -34,7 +34,7 @@ function addToCart(product, price) {
     updateCart();
 }
 
-// Função para atualizar carrinho
+// Função para atualizar o carrinho
 function updateCart() {
     const cartItems = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
@@ -48,7 +48,7 @@ function updateCart() {
     }
 }
 
-// Função para finalizar compra
+// Função para finalizar a compra
 function checkout() {
     if (cart.length > 0) {
         alert('Compra finalizada com sucesso!');
