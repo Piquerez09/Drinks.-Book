@@ -1,235 +1,139 @@
-/* General Styles */
+/* Reset de estilo básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Design refinado inspirado em marcas de luxo */
 body {
-    margin: 0;
-    font-family: 'Playfair Display', serif;
-    background-color: #000;
-    color: #fff;
-  }
-  
-  h1, h2 {
-    font-weight: bold;
-    color: #f4c542; /* Luxurious Gold */
-  }
-  
-  p, button {
-    font-size: 1.1rem;
-  }
-  
-  /* Header Styles */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #101010;
-    border-bottom: 2px solid #f4c542;
-  }
-  
-  header .logo h1 {
-    font-size: 1.8rem;
-  }
-  
-  header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s;
-  }
-  
-  header nav ul li a:hover {
-    color: #f4c542;
-  }
-  
-  #user-avatar {
-    width: 40px;
-    height: 40px;
-    background-color: #444;
-    color: #f4c542;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  /* Section Styles */
-  section {
-    padding: 50px 20px;
-    text-align: center;
-  }
-  
-  #home {
-    background-image: url('italian-drinks-background.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 100px 20px;
-  }
-  
-  #home h2 {
-    font-size: 2.5rem;
-  }
-  
-  #home button {
-    background-color: #f4c542;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #000;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #home button:hover {
-    background-color: #e0b93b;
-  }
-  
-  /* Cadastro Section */
-  #cadastro {
-    background-color: #1a1a1a;
-    padding: 50px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 20px auto;
-  }
-  
-  #cadastro form input, #cadastro form button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  #cadastro form input {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  #cadastro form button {
-    background-color: #f4c542;
-    color: #000;
-    font-weight: bold;
-  }
-  
-  #cadastro form button:hover {
-    background-color: #e0b93b;
-  }
-  
-  /* Categorias Section */
-  #categorias .categorias-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  #categorias .categorias-list button {
-    background-color: #f4c542;
-    border: none;
-    color: #000;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #categorias .categorias-list button:hover {
-    background-color: #e0b93b;
-  }
-  
-  #bebidas-list {
-    margin-top: 20px;
-  }
-  
-  /* AI Section */
-  #ia form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  #ia form textarea, #ia form input, #ia form button {
-    padding: 10px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  #ia form textarea, #ia form input {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  #ia form button {
-    background-color: #f4c542;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #ia form button:hover {
-    background-color: #e0b93b;
-  }
-  
-  #receitaDetalhada {
-    margin-top: 20px;
-    background-color: #222;
-    padding: 20px;
-    border-radius: 10px;
-    color: #f4c542;
-  }
-  
-  /* Loja Section */
-  #loja .produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  #loja .produtos .item {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  #loja .produtos .item img {
-    width: 100%;
-    display: block;
-  }
-  
-  #loja .produtos .item p {
-    padding: 10px;
-    font-size: 1.1rem;
-    text-align: center;
-    background-color: #000;
-    color: #f4c542;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #101010;
-    padding: 10px 20px;
-    text-align: center;
-    color: #f4c542;
-    border-top: 2px solid #444;
-  }
-  
+  font-family: 'Times New Roman', serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header.navbar {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin: 0 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+/* Categoria de bebidas */
+section h2 {
+  font-size: 2em;
+  margin: 20px 0;
+}
+
+.category {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.recipe-details {
+  display: none;
+  margin-top: 10px;
+}
+
+.recipe-details h4 {
+  font-size: 1.5em;
+}
+
+#age-verification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#age-verification-modal {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+#age-verification-modal button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+#shop {
+  margin-top: 40px;
+}
+
+.shop-items {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.shop-items .item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px;
+}
+
+.shop-items .item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: white;
+  margin-top: 40px;
+}

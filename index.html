@@ -1,76 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Italian Drinks | Luxurious Beverage Marketplace</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa de Bebidas Alcoólicas - Elegância e Sabor</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <h1>Italian Drinks</h1>
+    <div id="age-verification-overlay">
+        <div id="age-verification-modal">
+            <h2>Você tem 18 anos ou mais?</h2>
+            <button onclick="verifyAge(true)">Sim</button>
+            <button onclick="verifyAge(false)">Não</button>
+        </div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#categorias">Categories</a></li>
-        <li><a href="#loja">Store</a></li>
-        <li><a href="#ia">AI Recipes</a></li>
-      </ul>
-    </nav>
-    <div id="user-avatar" onclick="openProfile()">?</div>
-  </header>
 
-  <main>
-    <section id="home">
-      <h2>Welcome to Italian Drinks</h2>
-      <p>Explore the world of luxurious Italian beverages.</p>
-      <button onclick="scrollToSection('categorias')">Discover More</button>
+    <header class="navbar">
+        <div class="logo">Logo Empresa</div>
+        <nav>
+            <ul>
+                <li><a href="#category1">Cervejas</a></li>
+                <li><a href="#category2">Destilados</a></li>
+                <li><a href="#category3">Vinhos</a></li>
+                <li><a href="#shop">Loja</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="category1">
+        <h2>Cervejas</h2>
+        <div class="category">
+            <h3>Cerveja Pilsner</h3>
+            <button onclick="showRecipe('pilsner')">Ver Receita</button>
+            <div class="recipe-details" id="pilsner">
+                <h4>Receita Pilsner</h4>
+                <p>Ingredientes:</p>
+                <ul>
+                    <li>500ml de Cerveja Pilsner</li>
+                    <li>50ml de Limão</li>
+                    <li>Gelo a gosto</li>
+                </ul>
+                <p>Modo de preparo: Combine tudo em um copo grande com gelo.</p>
+            </div>
+        </div>
+        <!-- Mais bebidas aqui -->
     </section>
 
-    <section id="cadastro">
-      <h2>Register Now</h2>
-      <form id="register-form">
-        <input type="text" id="name" placeholder="Full Name" required>
-        <input type="email" id="email" placeholder="Email Address" required>
-        <input type="password" id="password" placeholder="Create Password" required>
-        <button type="submit">Sign Up</button>
-      </form>
+    <section id="category2">
+        <h2>Destilados</h2>
+        <div class="category">
+            <h3>Whisky</h3>
+            <button onclick="showRecipe('whisky')">Ver Receita</button>
+            <div class="recipe-details" id="whisky">
+                <h4>Receita Whisky Sour</h4>
+                <p>Ingredientes:</p>
+                <ul>
+                    <li>50ml de Whisky</li>
+                    <li>20ml de Suco de Limão</li>
+                    <li>15ml de Xarope de Açúcar</li>
+                    <li>Gelo</li>
+                </ul>
+                <p>Modo de preparo: Misture os ingredientes em uma coqueteleira e sirva em copo baixo com gelo.</p>
+            </div>
+        </div>
+        <!-- Mais bebidas aqui -->
     </section>
 
-    <section id="categorias">
-      <h2>Categories</h2>
-      <div class="categorias-list">
-        <button onclick="loadCategory('Classics')">Classics</button>
-        <button onclick="loadCategory('Tropical')">Tropical</button>
-        <button onclick="loadCategory('Modern')">Modern</button>
-        <button onclick="loadCategory('Italia Drinks')">Italia Drinks</button>
-      </div>
-      <div id="bebidas-list"></div>
+    <section id="shop">
+        <h2>Loja</h2>
+        <div class="shop-items">
+            <div class="item">
+                <img src="whisky-bottle.jpg" alt="Whisky">
+                <p>Whisky Premium - R$ 299,99</p>
+                <button>Comprar</button>
+            </div>
+            <!-- Outros itens da loja -->
+        </div>
     </section>
 
-    <section id="ia">
-      <h2>Create Your Recipe</h2>
-      <form id="iaForm">
-        <textarea id="preferences" placeholder="Enter what you like or don't like..." required></textarea>
-        <input type="text" id="occasion" placeholder="Occasion (e.g., Party, Dinner)">
-        <button type="button" onclick="generateRecipe()">Generate Recipe</button>
-      </form>
-      <div id="receitaDetalhada"></div>
-    </section>
+    <footer>
+        <p>&copy; 2024 Empresa de Bebidas Alcoólicas</p>
+    </footer>
 
-    <section id="loja">
-      <h2>Our Store</h2>
-      <div class="produtos" id="store-items"></div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 Italian Drinks. All Rights Reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
